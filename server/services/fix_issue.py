@@ -7,6 +7,8 @@ Given a GitHub issue, this:
   4. asks Claude (with vision for screenshots) to plan minimal multi-file changes
   5. writes the changes, commits to a branch, pushes, and opens a draft PR
 """
+from __future__ import annotations
+
 import base64
 import json
 import os

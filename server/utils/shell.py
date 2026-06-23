@@ -1,6 +1,9 @@
+from __future__ import annotations
+
 import re
 import subprocess
 import asyncio
+from typing import Optional
 from server.utils.logger import logger
 
 _TOKEN_RE = re.compile(r"(https?://)[\w\-]+:[^@]+@")
@@ -11,7 +14,7 @@ def _redact(cmd_str: str) -> str:
     return _TOKEN_RE.sub(r"\1***:***@", cmd_str)
 
 
-async def run_cmd(args: list[str], cwd: str, env: dict | None = None) -> str:
+async def run_cmd(args: list[str], cwd: str, env: Optional[dict] = None) -> str:
     """Run a command in a thread pool (Windows-safe, works on SelectorEventLoop)."""
     cmd_str = " ".join(args)
     safe_cmd = _redact(cmd_str)

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import asyncio
 import json
 import subprocess
@@ -92,7 +94,7 @@ async def _build_from_path(owner: str, repo: str, src_path: str, gdir) -> dict:
     return {"status": "ok", **meta}
 
 
-async def build_graph(owner: str, repo: str, token: str, repo_path: str | None = None) -> dict:
+async def build_graph(owner: str, repo: str, token: str, repo_path: Optional[str] = None) -> dict:
     """Build/refresh the knowledge graph for a repo.
 
     If `repo_path` is given, builds from that existing clone (no re-clone) — used

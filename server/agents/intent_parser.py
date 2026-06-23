@@ -1,6 +1,9 @@
+from __future__ import annotations
+
 import json
 import os
 import re
+from typing import Optional
 from openai import AsyncOpenAI
 from server.utils.logger import logger
 
@@ -253,7 +256,7 @@ def calc_cost_inr(usage: dict) -> float:
     return round(usd * _USD_TO_INR, 4)
 
 
-async def parse_intent(message: str, api_key: str | None = None, history: list | None = None, usage_acc: dict | None = None) -> dict:
+async def parse_intent(message: str, api_key: Optional[str] = None, history: Optional[list] = None, usage_acc: Optional[dict] = None) -> dict:
     """Classify intent using OpenAI gpt-4o-mini.
 
     `api_key` is the OpenAI key; falls back to OPENAI_API_KEY from env.
@@ -306,9 +309,9 @@ async def generate_chat_reply(
     message: str,
     owner: str,
     repo: str,
-    api_key: str | None = None,
-    history: list | None = None,
-    usage_acc: dict | None = None,
+    api_key: Optional[str] = None,
+    history: Optional[list] = None,
+    usage_acc: Optional[dict] = None,
     graph_context: str = "",
     is_code_question: bool = False,
     technical_mode: bool = False,

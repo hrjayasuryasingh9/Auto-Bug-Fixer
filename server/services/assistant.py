@@ -3,6 +3,8 @@
 Shared by the /api/message/, /api/chat/ routes and the WhatsApp webhook so the
 classification + routing logic lives in exactly one place.
 """
+from __future__ import annotations
+
 from server.agents.intent_parser import parse_intent, generate_chat_reply, calc_cost_inr
 from server.agents.status_agent import handle_status_query
 from server.services.graph_service import graph_exists, query_graph, relevant_files
@@ -12,6 +14,7 @@ from server.adapters.github_adapter import (
 )
 from server.utils.credentials import github_token, openai_key
 from server.utils.logger import logger
+from typing import Optional
 
 _STOP_WORDS = {
     'the', 'is', 'in', 'on', 'at', 'to', 'a', 'an', 'and', 'or', 'for', 'of',
@@ -149,10 +152,10 @@ async def run_assistant(
     message: str,
     owner: str,
     repo: str,
-    history: list | None = None,
+    history: Optional[list] = None,
     technical: bool = False,
-    intent: dict | None = None,
-    ctx: dict | None = None,
+    intent: Optional[dict] = None,
+    ctx: Optional[dict] = None,
     progress=None,
 ) -> dict:
     """Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)

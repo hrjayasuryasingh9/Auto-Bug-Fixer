@@ -5,6 +5,8 @@ we own (so the caller falls through to normal intent handling).
 
 Formatting uses `*bold*` + unicode emoji, which render on both Slack and WhatsApp.
 """
+from __future__ import annotations
+
 from server.adapters.github_adapter import list_user_repos, repo_exists
 from server.services.context_store import (
     get_active_repo, set_active_repo, get_technical, set_mode,

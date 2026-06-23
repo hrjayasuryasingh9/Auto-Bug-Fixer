@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 import asyncio
 import base64
 import re
 import time
 import httpx
+from typing import Optional
 from server.utils.logger import logger
 
 _BASE = "https://api.github.com"
@@ -11,7 +14,7 @@ _last_call: float = 0.0
 _MIN_INTERVAL = 0.5  # 2 req/sec max
 
 
-async def _throttled_get(url: str, token: str, params: dict | None = None) -> dict:
+async def _throttled_get(url: str, token: str, params: Optional[dict] = None) -> dict:
     global _last_call
     async with _RATE_LOCK:
         now = time.monotonic()

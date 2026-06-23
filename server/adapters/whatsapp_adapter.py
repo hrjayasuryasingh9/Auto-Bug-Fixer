@@ -1,11 +1,14 @@
+from __future__ import annotations
+
 import os
 import httpx
+from typing import Optional
 from server.utils.logger import logger
 
 _BASE = "https://graph.facebook.com/v19.0"
 
 
-async def send_text(phone_number: str, text: str, phone_number_id: str | None = None, access_token: str | None = None) -> None:
+async def send_text(phone_number: str, text: str, phone_number_id: Optional[str] = None, access_token: Optional[str] = None) -> None:
     pid = phone_number_id or os.environ.get("WHATSAPP_PHONE_NUMBER_ID", "")
     token = access_token or os.environ.get("WHATSAPP_ACCESS_TOKEN", "")
 

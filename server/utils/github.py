@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import httpx
+from typing import Optional
 from server.utils.logger import logger
 
 
@@ -9,8 +12,8 @@ async def create_github_pr(
     error_message: str,
     token: str,
     base: str = "main",
-    title: str | None = None,
-    body: str | None = None,
+    title: Optional[str] = None,
+    body: Optional[str] = None,
 ) -> str:
     url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
 

@@ -9,16 +9,19 @@ Resolution falls back thread → channel-level (same user) → server env defaul
 so a user who picked a repo in the channel keeps it inside threads too, while a
 thread can still override.
 """
+from __future__ import annotations
+
 import os
 import sqlite3
 import threading
+from typing import Optional
 
 from server.utils.credentials import github_owner, github_repo
 from server.utils.logger import logger
 
 _DB = os.path.join(os.path.dirname(__file__), "..", "data", "context.db")
 _lock = threading.Lock()
-_conn: sqlite3.Connection | None = None
+_conn: Optional[sqlite3.Connection] = None
 
 _DDL = """
 CREATE TABLE IF NOT EXISTS conversation_context (
@@ -54,7 +57,7 @@ def _key(ctx: dict) -> tuple[str, str, str, str]:
     )
 
 
-def _row(w: str, c: str, t: str, u: str) -> dict | None:
+def _row(w: str, c: str, t: str, u: str) -> Optional[dict]:
     with _lock:
         cur = _db().execute(
             "SELECT selected_owner, selected_repo, mode FROM conversation_context "
@@ -65,7 +68,7 @@ def _row(w: str, c: str, t: str, u: str) -> dict | None:
     return {"owner": r[0], "repo": r[1], "mode": r[2]} if r else None
 
 
-def _best(ctx: dict) -> dict | None:
+def _best(ctx: dict) -> Optional[dict]:
     """Exact (incl. thread) → same user at channel level (thread='') → None."""
     w, c, t, u = _key(ctx)
     row = _row(w, c, t, u)
@@ -76,7 +79,7 @@ def _best(ctx: dict) -> dict | None:
     return None
 
 
-def get_active_repo(ctx: dict) -> dict | None:
+def get_active_repo(ctx: dict) -> Optional[dict]:
     row = _best(ctx)
     if row and row.get("owner") and row.get("repo"):
         return {"owner": row["owner"], "repo": row["repo"]}

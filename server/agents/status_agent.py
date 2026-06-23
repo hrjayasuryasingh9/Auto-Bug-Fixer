@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from server.adapters.github_adapter import (
     get_open_prs, get_open_issues, get_recent_commits,
     get_pr, get_commit, get_issue_detail, get_repo_info, get_file_or_dir,
