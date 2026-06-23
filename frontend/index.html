@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Assistant</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3347;
+      --accent: #6c63ff;
+      --accent-soft: rgba(108,99,255,0.12);
+      --success: #34d399;
+      --success-soft: rgba(52,211,153,0.12);
+      --danger: #f87171;
+      --danger-soft: rgba(248,113,113,0.12);
+      --warning: #fbbf24;
+      --warning-soft: rgba(251,191,36,0.12);
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --text: #e2e8f0;
+      --text2: #94a3b8;
+      --text3: #64748b;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────────── */
+    .sidebar {
+      width: 280px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 20px 16px;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .logo { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg, var(--accent), var(--purple)); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .logo h1 { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .logo span { font-size: 11px; color: var(--text2); }
+
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
+
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 11px; color: var(--text2); }
+    .field input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 7px 10px;
+      color: var(--text);
+      font-size: 12.5px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .field input:focus { border-color: var(--accent); }
+    .field input::placeholder { color: var(--text3); }
+
+    .cred-pill {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12px; padding: 7px 10px;
+      border-radius: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text3); flex-shrink: 0; }
+    .dot.ok { background: var(--success); box-shadow: 0 0 6px var(--success); }
+    .dot.warn { background: var(--warning); }
+
+    .tabs { display: flex; gap: 4px; background: var(--surface2); border-radius: 8px; padding: 4px; margin-top: auto; }
+    .tab { flex: 1; padding: 7px 0; border: none; border-radius: 6px; background: transparent; color: var(--text2); font-size: 12.5px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+    .tab.active { background: var(--accent); color: #fff; }
+
+    /* ── Main ────────────────────────────────────────────────────── */
+    .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .panel { display: none; flex: 1; flex-direction: column; overflow: hidden; }
+    .panel.active { display: flex; }
+
+    /* ── Chat ────────────────────────────────────────────────────── */
+    .chat-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .chat-header h2 { font-size: 14px; font-weight: 600; }
+    .chat-header p  { font-size: 12px; color: var(--text2); }
+
+    .messages { flex: 1; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+
+    .msg { display: flex; gap: 9px; max-width: 80%; animation: fadeUp 0.18s ease; }
+    .msg.user { align-self: flex-end; flex-direction: row-reverse; max-width: 65%; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+    .avatar { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+    .msg.bot  .avatar { background: linear-gradient(135deg, var(--accent), var(--purple)); }
+    .msg.user .avatar { background: var(--surface2); border: 1px solid var(--border); }
+
+    .msg-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+    .bubble {
+      padding: 10px 13px;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .msg.bot  .bubble { background: var(--surface); border: 1px solid var(--border); border-top-left-radius: 4px; }
+    .msg.user .bubble { background: var(--accent); color: #fff; border-top-right-radius: 4px; }
+
+    .intent-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--surface2); color: var(--text3); border: 1px solid var(--border); align-self: flex-start; }
+
+    /* ── Typing ── */
+    .typing .bubble { display: flex; gap: 4px; align-items: center; padding: 12px 14px; }
+    .typing .bubble span { width: 6px; height: 6px; border-radius: 50%; background: var(--text2); animation: bounce 1.2s infinite; }
+    .typing .bubble span:nth-child(2) { animation-delay: 0.2s; }
+    .typing .bubble span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce { 0%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-5px); } }
+
+    /* ── Cards ────────────────────────────────────────────────────── */
+    .card-block { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+
+    .card-header {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text3); padding: 0 2px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .card-header .count-badge {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1px 7px; font-size: 11px; font-weight: 600; color: var(--text2);
+    }
+
+    /* PR card */
+    .pr-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.15s;
+      text-decoration: none;
+    }
+    .pr-card:hover { border-color: var(--accent); }
+    .pr-number { font-size: 11px; font-weight: 700; color: var(--text3); background: var(--surface2); border-radius: 5px; padding: 2px 6px; flex-shrink: 0; }
+    .pr-title { font-size: 13px; color: var(--text); font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pr-author { font-size: 11px; color: var(--text3); flex-shrink: 0; }
+
+    /* PR detail card */
+    .pr-detail-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .pr-detail-title { font-size: 14px; font-weight: 600; color: var(--text); }
+    .pr-detail-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .badge {
+      font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .badge.open    { background: var(--success-soft); color: var(--success); border: 1px solid rgba(52,211,153,0.25); }
+    .badge.closed  { background: var(--danger-soft);  color: var(--danger);  border: 1px solid rgba(248,113,113,0.25); }
+    .badge.merged  { background: var(--accent-soft);  color: var(--purple);  border: 1px solid rgba(167,139,250,0.25); }
+    .badge.draft   { background: var(--surface2);     color: var(--text2);   border: 1px solid var(--border); }
+    .badge.author  { background: var(--surface2);     color: var(--text2);   border: 1px solid var(--border); }
+    .pr-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+    .pr-link:hover { text-decoration: underline; }
+    .pr-body-text { font-size: 12px; color: var(--text2); line-height: 1.5; border-left: 2px solid var(--border); padding-left: 10px; }
+
+    /* Commit card */
+    .commit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .commit-sha { font-family: 'Courier New', monospace; font-size: 11px; color: var(--purple); background: var(--surface2); border-radius: 5px; padding: 2px 7px; flex-shrink: 0; }
+    .commit-msg { font-size: 12.5px; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .commit-author { font-size: 11px; color: var(--text3); flex-shrink: 0; }
+
+    /* Issue card */
+    .issue-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .issue-card:hover { border-color: var(--warning); }
+    .issue-number { font-size: 11px; font-weight: 700; color: var(--text3); background: var(--surface2); border-radius: 5px; padding: 2px 6px; flex-shrink: 0; }
+    .issue-title  { font-size: 12.5px; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .issue-author { font-size: 11px; color: var(--text3); flex-shrink: 0; }
+
+    /* Empty / error state */
+    .empty-state { font-size: 13px; color: var(--text2); padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; text-align: center; }
+
+    /* ── Input area ─────────────────────────────────────────────── */
+    .suggestions { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 20px 10px; }
+    .chip { padding: 4px 11px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); color: var(--text2); font-size: 11.5px; cursor: pointer; transition: all 0.15s; }
+    .chip:hover { border-color: var(--accent); color: var(--text); }
+
+    .chat-input-area { padding: 12px 20px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: flex-end; }
+    .chat-input-area textarea {
+      flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: 9px 13px; color: var(--text); font-size: 13.5px; font-family: inherit;
+      resize: none; outline: none; min-height: 42px; max-height: 110px; line-height: 1.5;
+      transition: border-color 0.15s;
+    }
+    .chat-input-area textarea:focus { border-color: var(--accent); }
+    .chat-input-area textarea::placeholder { color: var(--text3); }
+    .send-btn { width: 42px; height: 42px; border-radius: 10px; background: var(--accent); border: none; color: #fff; font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity 0.15s; }
+    .send-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ── Error Fix panel ─────────────────────────────────────────── */
+    .fix-panel { padding: 24px; overflow-y: auto; flex: 1; }
+    .fix-panel h2 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .fix-panel > p { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-grid .full { grid-column: 1 / -1; }
+    .form-field { display: flex; flex-direction: column; gap: 5px; }
+    .form-field label { font-size: 12px; color: var(--text2); font-weight: 500; }
+    .form-field input, .form-field textarea { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; color: var(--text); font-size: 13px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); }
+    .form-field textarea { resize: vertical; min-height: 80px; }
+    .submit-btn { margin-top: 16px; padding: 11px 24px; background: var(--accent); border: none; border-radius: 8px; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; transition: opacity 0.15s; }
+    .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .result-box { margin-top: 16px; padding: 14px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); font-size: 13px; white-space: pre-wrap; word-break: break-all; display: none; }
+    .result-box.success { border-color: var(--success); }
+    .result-box.error   { border-color: var(--danger); }
+    .result-box .label  { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
+    .result-box.success .label { color: var(--success); }
+    .result-box.error   .label { color: var(--danger); }
+
+    /* Commit detail card */
+    .commit-detail-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .commit-detail-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .commit-detail-message { font-size: 14px; font-weight: 600; color: var(--text); white-space: pre-wrap; }
+    .commit-meta-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .commit-stat { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; }
+    .commit-stat.add { background: var(--success-soft); color: var(--success); border: 1px solid rgba(52,211,153,0.25); }
+    .commit-stat.del { background: var(--danger-soft);  color: var(--danger);  border: 1px solid rgba(248,113,113,0.25); }
+    .commit-stat.neutral { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); }
+    .files-section { display: flex; flex-direction: column; gap: 5px; }
+    .files-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); }
+    .file-row { background: var(--surface2); border-radius: 7px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; }
+    .file-row-header { display: flex; align-items: center; gap: 8px; }
+    .file-name { font-size: 12px; font-family: 'Courier New', monospace; color: var(--blue); flex: 1; word-break: break-all; }
+    .file-status { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; flex-shrink: 0; text-transform: uppercase; }
+    .file-status.modified { background: var(--warning-soft); color: var(--warning); }
+    .file-status.added    { background: var(--success-soft); color: var(--success); }
+    .file-status.removed  { background: var(--danger-soft);  color: var(--danger); }
+    .file-stats { font-size: 11px; color: var(--text3); }
+    .patch-block { font-family: 'Courier New', monospace; font-size: 11px; color: var(--text2); background: var(--bg); border-radius: 5px; padding: 7px 9px; white-space: pre-wrap; word-break: break-all; max-height: 140px; overflow-y: auto; border: 1px solid var(--border); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <div><h1>AI Engineering<br>Assistant</h1><span>Powered by Claude</span></div>
+  </div>
+
+  <div>
+    <div class="section-label">Credentials</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="field"><label>GitHub Token</label><input type="password" id="github_token" placeholder="ghp_..." /></div>
+      <div class="field"><label>Owner / Org</label><input type="text" id="owner" placeholder="username or org" /></div>
+      <div class="field"><label>Repository</label><input type="text" id="repo" placeholder="repo-name" /></div>
+      <div class="field"><label>Anthropic API Key</label><input type="password" id="anthropic_key" placeholder="sk-ant-..." /></div>
+    </div>
+  </div>
+
+  <div class="cred-pill">
+    <div class="dot" id="status-dot"></div>
+    <span id="status-text" style="font-size:12px;color:var(--text2)">Credentials not set</span>
+  </div>
+
+  <div class="tabs" style="margin-top:auto">
+    <button class="tab active" onclick="switchTab('chat')">Chat</button>
+    <button class="tab" onclick="switchTab('fix')">Error Fix</button>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- Chat panel -->
+  <div class="panel active" id="panel-chat">
+    <div class="chat-header">
+      <div>
+        <h2>Repo Assistant</h2>
+        <p>Ask anything about your repository in plain English</p>
+      </div>
+    </div>
+
+    <div class="messages" id="messages">
+      <div class="msg bot">
+        <div class="avatar">🤖</div>
+        <div class="msg-body">
+          <div class="bubble">Hi! I can query your GitHub repo in plain English.
+
+Try:  "What PRs are open?"  •  "Show recent commits"
+      "Status of PR 5"      •  "List open issues"
+
+Set your credentials in the sidebar first.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="suggestions" id="suggestions">
+      <span class="chip" onclick="sendChip(this)">What PRs are open?</span>
+      <span class="chip" onclick="sendChip(this)">Show recent commits</span>
+      <span class="chip" onclick="sendChip(this)">List open issues</span>
+      <span class="chip" onclick="sendChip(this)">Status of PR 1</span>
+    </div>
+
+    <div class="chat-input-area">
+      <textarea id="chat-input" placeholder="Ask about your repo..." rows="1"
+        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="send-btn" onclick="sendMessage()">&#9658;</button>
+    </div>
+  </div>
+
+  <!-- Error Fix panel -->
+  <div class="panel" id="panel-fix">
+    <div class="fix-panel">
+      <h2>AI Error Fix Pipeline</h2>
+      <p>Paste a frontend runtime error and let Claude generate a fix, validate it, and open a draft PR.</p>
+      <div class="form-grid">
+        <div class="form-field full"><label>Error Message *</label><textarea id="fix-message" placeholder="TypeError: Cannot read properties of undefined (reading 'map')"></textarea></div>
+        <div class="form-field full"><label>Stack Trace</label><textarea id="fix-stack" placeholder="at Component.render (App.jsx:42)&#10;..."></textarea></div>
+        <div class="form-field"><label>Repo URL *</label><input type="text" id="fix-repo-url" placeholder="https://github.com/owner/repo" /></div>
+        <div class="form-field"><label>Repo Name *</label><input type="text" id="fix-repo-name" placeholder="my-frontend-app" /></div>
+        <div class="form-field full"><label>Target File *</label><input type="text" id="fix-target-file" placeholder="src/components/Dashboard.jsx" /></div>
+        <div class="form-field"><label>Line Number</label><input type="number" id="fix-line" placeholder="42" /></div>
+        <div class="form-field"><label>Column Number</label><input type="number" id="fix-col" placeholder="15" /></div>
+      </div>
+      <button class="submit-btn" id="fix-btn" onclick="submitFix()">Run AI Fix Pipeline</button>
+      <div class="result-box" id="fix-result">
+        <div class="label" id="fix-result-label"></div>
+        <div id="fix-result-body"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const API = '';
+
+  // ── Credentials ──────────────────────────────────────────────────
+  ['github_token','owner','repo','anthropic_key'].forEach(id => {
+    const saved = localStorage.getItem('cred_' + id);
+    if (saved) document.getElementById(id).value = saved;
+    document.getElementById(id).addEventListener('input', saveAndUpdateCreds);
+  });
+
+  function creds() {
+    return {
+      github_token:     document.getElementById('github_token').value.trim(),
+      owner:            document.getElementById('owner').value.trim(),
+      repo:             document.getElementById('repo').value.trim(),
+      anthropic_api_key: document.getElementById('anthropic_key').value.trim() || undefined,
+    };
+  }
+
+  function saveAndUpdateCreds() {
+    ['github_token','owner','repo','anthropic_key'].forEach(id =>
+      localStorage.setItem('cred_' + id, document.getElementById(id).value.trim()));
+    const c = creds();
+    const ok = c.github_token && c.owner && c.repo;
+    document.getElementById('status-dot').className = 'dot ' + (ok ? 'ok' : 'warn');
+    document.getElementById('status-text').textContent = ok ? `${c.owner}/${c.repo}` : 'Credentials not set';
+  }
+  saveAndUpdateCreds();
+
+  // ── Tabs ─────────────────────────────────────────────────────────
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['chat','fix'][i] === name));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+  }
+
+  // ── Chat helpers ─────────────────────────────────────────────────
+  function autoResize(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 110) + 'px'; }
+  function handleKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }
+  function sendChip(el) { document.getElementById('chat-input').value = el.textContent; sendMessage(); }
+
+  function scrollBottom() {
+    const m = document.getElementById('messages');
+    m.scrollTop = m.scrollHeight;
+  }
+
+  function appendUserMsg(text) {
+    const msgs = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = 'msg user';
+    div.innerHTML = `<div class="avatar">👤</div><div class="msg-body"><div class="bubble">${esc(text)}</div></div>`;
+    msgs.appendChild(div);
+    scrollBottom();
+  }
+
+  function showTyping() {
+    const msgs = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = 'msg bot typing';
+    div.id = 'typing';
+    div.innerHTML = `<div class="avatar">🤖</div><div class="msg-body"><div class="bubble"><span></span><span></span><span></span></div></div>`;
+    msgs.appendChild(div);
+    scrollBottom();
+  }
+
+  function hideTyping() { document.getElementById('typing')?.remove(); }
+
+  function appendBotMsg(reply, intent, data) {
+    const msgs = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = 'msg bot';
+
+    const intentTag = intent && intent !== 'unknown'
+      ? `<div class="intent-tag">${esc(intent)}</div>` : '';
+
+    let content = '';
+    if (data && data.type && data.type !== 'error') {
+      content = renderData(data);
+    } else {
+      content = `<div class="bubble">${esc(reply)}</div>`;
+    }
+
+    div.innerHTML = `<div class="avatar">🤖</div><div class="msg-body">${content}${intentTag}</div>`;
+    msgs.appendChild(div);
+    scrollBottom();
+  }
+
+  // ── Structured renderers ──────────────────────────────────────────
+  function renderData(data) {
+    switch (data.type) {
+      case 'pr_list':       return renderPRList(data);
+      case 'issue_list':    return renderIssueList(data);
+      case 'commit_list':   return renderCommitList(data);
+      case 'pr_detail':     return renderPRDetail(data.item);
+      case 'commit_detail': return renderCommitDetail(data.item);
+      case 'issue_detail':  return renderIssueDetail(data.item);
+      case 'repo_info':         return renderRepoInfo(data.item);
+      case 'file_suggestions':  return renderFileSuggestions(data);
+      case 'directory':     return renderDirectory(data);
+      case 'file_content':  return renderFileContent(data);
+      case 'count':         return renderCount(data);
+      case 'empty':         return `<div class="empty-state">${esc(data.message)}</div>`;
+      default:              return `<div class="bubble">${esc(data.message || '')}</div>`;
+    }
+  }
+
+  function renderPRList(data) {
+    const rows = data.items.map(pr => `
+      <a class="pr-card" href="${esc(pr.url)}" target="_blank">
+        <span class="pr-number">#${pr.number}</span>
+        <span class="pr-title">${esc(pr.title)}</span>
+        <span class="pr-author">@${esc(pr.author)}</span>
+      </a>`).join('');
+    return `<div class="card-block">
+      <div class="card-header">Pull Requests <span class="count-badge">${data.items.length}</span></div>
+      ${rows}
+    </div>`;
+  }
+
+  function renderIssueList(data) {
+    const rows = data.items.map(i => `
+      <a class="issue-card" href="${esc(i.url)}" target="_blank">
+        <span class="issue-number">#${i.number}</span>
+        <span class="issue-title">${esc(i.title)}</span>
+        <span class="issue-author">@${esc(i.author)}</span>
+      </a>`).join('');
+    return `<div class="card-block">
+      <div class="card-header">Open Issues <span class="count-badge">${data.items.length}</span></div>
+      ${rows}
+    </div>`;
+  }
+
+  function renderCommitList(data) {
+    const rows = data.items.map(c => `
+      <div class="commit-card">
+        <span class="commit-sha">${esc(c.sha)}</span>
+        <span class="commit-msg">${esc(c.message)}</span>
+        <span class="commit-author">${esc(c.author)}</span>
+      </div>`).join('');
+    return `<div class="card-block">
+      <div class="card-header">Recent Commits <span class="count-badge">${data.items.length}</span></div>
+      ${rows}
+    </div>`;
+  }
+
+  function renderCommitDetail(c) {
+    const fileStatusClass = s => ({'modified':'modified','added':'added','removed':'removed'}[s] || 'modified');
+    const fileRows = c.files.map(f => `
+      <div class="file-row">
+        <div class="file-row-header">
+          <span class="file-name">${esc(f.filename)}</span>
+          <span class="file-status ${fileStatusClass(f.status)}">${esc(f.status)}</span>
+          <span class="file-stats">+${f.additions} -${f.deletions}</span>
+        </div>
+        ${f.patch ? `<div class="patch-block">${esc(f.patch)}</div>` : ''}
+      </div>`).join('');
+
+    const date = c.date ? new Date(c.date).toLocaleString() : '';
+    return `<div class="commit-detail-card">
+      <div class="commit-detail-header">
+        <span class="commit-sha" style="font-size:13px">${esc(c.sha)}</span>
+        <span class="badge author">@${esc(c.author)}</span>
+        ${date ? `<span style="font-size:11px;color:var(--text3)">${esc(date)}</span>` : ''}
+      </div>
+      <div class="commit-detail-message">${esc(c.message)}</div>
+      <div class="commit-meta-row">
+        <span class="commit-stat add">+${c.additions} additions</span>
+        <span class="commit-stat del">-${c.deletions} deletions</span>
+        <span class="commit-stat neutral">${c.files.length} file${c.files.length !== 1 ? 's' : ''} changed</span>
+      </div>
+      ${c.files.length ? `<div class="files-section"><div class="files-label">Files Changed</div>${fileRows}</div>` : ''}
+      <a class="pr-link" href="${esc(c.url)}" target="_blank">View full diff on GitHub ↗</a>
+    </div>`;
+  }
+
+  function renderPRDetail(pr) {
+    const statusKey = pr.merged ? 'merged' : pr.state;
+    const statusLabel = pr.merged ? 'Merged' : pr.draft ? 'Draft' : pr.state === 'open' ? 'Open' : 'Closed';
+    const draftBadge = pr.draft && !pr.merged ? `<span class="badge draft">Draft</span>` : '';
+    const bodySnip = pr.body ? `<div class="pr-body-text">${esc(pr.body.slice(0, 300))}${pr.body.length > 300 ? '…' : ''}</div>` : '';
+    return `<div class="pr-detail-card">
+      <div class="pr-detail-title">#${pr.number} ${esc(pr.title)}</div>
+      <div class="pr-detail-meta">
+        <span class="badge ${statusKey}">${statusLabel}</span>
+        ${draftBadge}
+        <span class="badge author">@${esc(pr.author)}</span>
+      </div>
+      ${bodySnip}
+      <a class="pr-link" href="${esc(pr.url)}" target="_blank">View on GitHub ↗</a>
+    </div>`;
+  }
+
+  function renderDirectory(data) {
+    const rows = data.files.map(f => {
+      const icon = f.type === 'dir' ? '📁' : '📄';
+      const sizeStr = f.type === 'file' && f.size ? `<span style="font-size:10px;color:var(--text3)">${(f.size/1024).toFixed(1)} KB</span>` : '';
+      return `<a class="pr-card" href="${esc(f.url)}" target="_blank" style="gap:8px">
+        <span style="font-size:14px">${icon}</span>
+        <span class="pr-title">${esc(f.name)}</span>
+        ${sizeStr}
+      </a>`;
+    }).join('');
+    return `<div class="card-block">
+      <div class="card-header">📁 ${esc(data.path)}/ <span class="count-badge">${data.files.length}</span></div>
+      ${rows}
+      <a class="pr-link" style="font-size:11px;padding:2px 0" href="${esc(data.url)}" target="_blank">View on GitHub ↗</a>
+    </div>`;
+  }
+
+  function renderFileContent(data) {
+    const sizeKb = (data.size / 1024).toFixed(1);
+    const contentHtml = data.content
+      ? `<div class="patch-block" style="max-height:320px;font-size:11.5px">${esc(data.content)}</div>`
+      : '';
+    return `<div class="pr-detail-card">
+      <div class="pr-detail-title">📄 ${esc(data.name)}</div>
+      <div class="pr-detail-meta">
+        <span class="badge draft">${esc(data.path)}</span>
+        <span class="badge author">${sizeKb} KB</span>
+      </div>
+      ${contentHtml}
+      <a class="pr-link" href="${esc(data.url)}" target="_blank">View on GitHub ↗</a>
+    </div>`;
+  }
+
+  function renderFileSuggestions(data) {
+    const rows = data.matches.map(m => {
+      const icon = m.type === 'directory' ? '📁' : '📄';
+      return `<a class="pr-card" style="gap:8px;text-decoration:none" onclick="document.getElementById('chat-input').value='Tell me about ${esc(m.path)}';sendMessage()">
+        <span style="font-size:14px">${icon}</span>
+        <span class="pr-title">${esc(m.path)}</span>
+        <span style="font-size:10px;color:var(--text3)">${esc(m.type)}</span>
+      </a>`;
+    }).join('');
+    return `<div class="card-block">
+      <div class="card-header">🔍 Results for "${esc(data.query)}" <span class="count-badge">${data.matches.length}</span></div>
+      ${rows}
+      <div style="font-size:11px;color:var(--text3);padding:4px 2px">Click any file to view it</div>
+    </div>`;
+  }
+
+  function renderRepoInfo(r) {
+    const visibility = r.private
+      ? `<span class="badge closed">🔒 Private</span>`
+      : `<span class="badge open">🌐 Public</span>`;
+    const topics = (r.topics || []).map(t =>
+      `<span class="badge" style="background:var(--accent-soft);color:var(--accent);border-color:rgba(108,99,255,0.25)">${esc(t)}</span>`
+    ).join('');
+    const description = r.description
+      ? `<div class="pr-body-text">${esc(r.description)}</div>` : '';
+    const readme = r.readme_excerpt
+      ? `<div class="files-section">
+           <div class="files-label">README</div>
+           <div style="font-size:12px;color:var(--text2);line-height:1.6;white-space:pre-wrap">${esc(r.readme_excerpt.slice(0, 500))}${r.readme_excerpt.length > 500 ? '…' : ''}</div>
+         </div>` : '';
+    const files = (r.top_files || []).length
+      ? `<div class="files-section">
+           <div class="files-label">Top-level files</div>
+           <div style="display:flex;flex-wrap:wrap;gap:5px">` +
+           r.top_files.slice(0, 16).map(f =>
+             `<span class="file-name" style="background:var(--surface2);border-radius:5px;padding:2px 7px;font-size:11px">${esc(f)}</span>`
+           ).join('') +
+         `</div></div>` : '';
+    const pushedAt = r.pushed_at ? new Date(r.pushed_at).toLocaleDateString() : '';
+
+    return `<div class="pr-detail-card">
+      <div class="pr-detail-title">${esc(r.full_name)}</div>
+      <div class="pr-detail-meta">
+        ${visibility}
+        <span class="badge author">${esc(r.language || 'Unknown')}</span>
+        ${r.license ? `<span class="badge draft">${esc(r.license)}</span>` : ''}
+      </div>
+      ${description}
+      <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--text2)">
+        <span>⭐ <b>${r.stars}</b> stars</span>
+        <span>🍴 <b>${r.forks}</b> forks</span>
+        <span>🐛 <b>${r.open_issues}</b> issues</span>
+        <span>🌿 <b>${esc(r.default_branch)}</b></span>
+        ${pushedAt ? `<span>📅 ${esc(pushedAt)}</span>` : ''}
+      </div>
+      ${topics ? `<div class="pr-detail-meta" style="flex-wrap:wrap">${topics}</div>` : ''}
+      ${readme}
+      ${files}
+      <a class="pr-link" href="${esc(r.url)}" target="_blank">View on GitHub ↗</a>
+    </div>`;
+  }
+
+  function renderCount(data) {
+    return `<div class="empty-state" style="padding:20px 16px">
+      <div style="font-size:36px;font-weight:700;color:var(--text);line-height:1">${data.count}</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:6px">${esc(data.label)}</div>
+    </div>`;
+  }
+
+  function renderIssueDetail(issue) {
+    const statusKey   = issue.state;
+    const statusLabel = issue.state === 'open' ? 'Open' : 'Closed';
+    const labels = (issue.labels || []).map(l =>
+      `<span class="badge" style="background:#${esc(l.color||'555')};color:#fff;border:none">${esc(l.name)}</span>`
+    ).join('');
+    const bodyHtml = issue.body
+      ? `<div class="pr-body-text">${esc(issue.body.slice(0, 500))}${issue.body.length > 500 ? '…' : ''}</div>`
+      : '';
+    const imagesHtml = (issue.images || []).length
+      ? `<div class="files-section">
+          <div class="files-label">Attachments</div>` +
+          issue.images.slice(0, 4).map(url =>
+            `<a class="pr-link" href="${esc(url)}" target="_blank">📎 ${esc(url.split('/').pop().slice(0, 50))}</a>`
+          ).join('<br>') +
+        `</div>`
+      : '';
+    const commentsHtml = (issue.comments || []).length
+      ? `<div class="files-section">
+          <div class="files-label">Comments (${esc(String(issue.comments_count))})</div>` +
+          issue.comments.map(c => `
+            <div class="file-row">
+              <div class="file-row-header">
+                <span class="commit-author">@${esc(c.author)}</span>
+                <span style="font-size:10px;color:var(--text3)">${esc(new Date(c.date).toLocaleDateString())}</span>
+              </div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px;white-space:pre-wrap">${esc(c.body.slice(0, 250))}${c.body.length > 250 ? '…' : ''}</div>
+              ${(c.images||[]).slice(0,2).map(img => `<a class="pr-link" style="font-size:11px" href="${esc(img)}" target="_blank">📷 image</a>`).join(' ')}
+            </div>`).join('') +
+        `</div>`
+      : '';
+
+    return `<div class="pr-detail-card">
+      <div class="pr-detail-title">#${issue.number} ${esc(issue.title)}</div>
+      <div class="pr-detail-meta">
+        <span class="badge ${statusKey}">${statusLabel}</span>
+        <span class="badge author">@${esc(issue.author)}</span>
+        ${labels}
+      </div>
+      ${bodyHtml}
+      ${imagesHtml}
+      ${commentsHtml}
+      <a class="pr-link" href="${esc(issue.url)}" target="_blank">View on GitHub ↗</a>
+    </div>`;
+  }
+
+  // ── Send ─────────────────────────────────────────────────────────
+  async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const c = creds();
+    if (!c.github_token || !c.owner || !c.repo) {
+      appendBotMsg('Please fill in your GitHub Token, Owner, and Repo in the sidebar first.', null, null);
+      return;
+    }
+
+    input.value = '';
+    input.style.height = 'auto';
+    document.getElementById('send-btn').disabled = true;
+    document.getElementById('suggestions').style.display = 'none';
+
+    appendUserMsg(text);
+    showTyping();
+
+    try {
+      const res = await fetch(API + '/api/chat/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, ...c }),
+      });
+      const data = await res.json();
+      hideTyping();
+      appendBotMsg(data.reply, data.intent, data.data);
+    } catch (e) {
+      hideTyping();
+      appendBotMsg('Network error: ' + e.message, null, null);
+    } finally {
+      document.getElementById('send-btn').disabled = false;
+    }
+  }
+
+  // ── Error Fix ─────────────────────────────────────────────────────
+  async function submitFix() {
+    const c = creds();
+    const message  = document.getElementById('fix-message').value.trim();
+    const repoUrl  = document.getElementById('fix-repo-url').value.trim();
+    const repoName = document.getElementById('fix-repo-name').value.trim();
+    const targetFile = document.getElementById('fix-target-file').value.trim();
+
+    if (!message || !repoUrl || !repoName || !targetFile) { alert('Fill in: Error Message, Repo URL, Repo Name, Target File.'); return; }
+    if (!c.github_token || !c.owner || !c.repo) { alert('Fill in credentials in the sidebar.'); return; }
+
+    const btn = document.getElementById('fix-btn');
+    btn.disabled = true; btn.textContent = 'Running pipeline...';
+    document.getElementById('fix-result').style.display = 'none';
+
+    const body = {
+      message, repo_url: repoUrl, repo_name: repoName, target_file: targetFile,
+      github_token: c.github_token, github_owner: c.owner, github_repo: c.repo,
+      anthropic_api_key: c.anthropic_api_key,
+      stack:         document.getElementById('fix-stack').value.trim() || undefined,
+      line_number:   parseInt(document.getElementById('fix-line').value)  || undefined,
+      column_number: parseInt(document.getElementById('fix-col').value)   || undefined,
+    };
+
+    try {
+      const res = await fetch(API + '/api/ai-fix/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const data = await res.json();
+      const box = document.getElementById('fix-result');
+      box.className = 'result-box ' + (data.success ? 'success' : 'error');
+      document.getElementById('fix-result-label').textContent = data.success ? '✓ Pipeline succeeded' : '✗ Pipeline failed';
+      document.getElementById('fix-result-body').textContent  = data.success
+        ? `PR: ${data.pr_url}\nBranch: ${data.branch_name}\n${data.message || ''}`
+        : `Error: ${data.error || 'Unknown error'}`;
+      box.style.display = 'block';
+    } catch (e) {
+      const box = document.getElementById('fix-result');
+      box.className = 'result-box error';
+      document.getElementById('fix-result-label').textContent = '✗ Network error';
+      document.getElementById('fix-result-body').textContent  = e.message;
+      box.style.display = 'block';
+    } finally {
+      btn.disabled = false; btn.textContent = 'Run AI Fix Pipeline';
+    }
+  }
+
+  function esc(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+</script>
+</body>
+</html>

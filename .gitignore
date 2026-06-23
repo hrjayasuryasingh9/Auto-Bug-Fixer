@@ -21,6 +21,12 @@ env/
 # Cloned repos (temp working directories)
 server/temp_repos/*/
 
+# Per-repo knowledge graphs (built at runtime, can be large)
+server/graphs/
+
+# Runtime session data (per-chat active repo)
+server/data/
+
 # Logs
 server/logs/
 
@@ -32,3 +38,14 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# WhatsApp bridge
+whatsapp-bridge/node_modules/
+whatsapp-bridge/.wwebjs_auth/
+whatsapp-bridge/.wwebjs_cache/
+whatsapp-bridge/sessions.json
+whatsapp-bridge/history.json
+
+# Slack bridge
+slack-bridge/node_modules/
+slack-bridge/history.json
