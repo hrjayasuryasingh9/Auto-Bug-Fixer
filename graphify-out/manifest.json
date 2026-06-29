@@ -5,8 +5,8 @@
     "semantic_hash": "a4c6c10d074fe2da13127cd1d3cf364e"
   },
   "C:\\personal\\Auto Error Fixer\\server\\main.py": {
-    "mtime": 1782193781.9435985,
-    "ast_hash": "421d19a498450beb142f7122442f106d",
+    "mtime": 1782454237.5215535,
+    "ast_hash": "b91d2ffec57d62794bed56b43ffa5427",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\__init__.py": {
@@ -15,14 +15,14 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "C:\\personal\\Auto Error Fixer\\server\\adapters\\github_adapter.py": {
-    "mtime": 1782193714.4903526,
-    "ast_hash": "048b916f7ac8ea54a813612ca18e6155",
+    "mtime": 1782454202.446689,
+    "ast_hash": "443a1ceaa0710ba985fc542e0bc225d8",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\adapters\\whatsapp_adapter.py": {
-    "mtime": 1779702410.671323,
-    "ast_hash": "2fcde3bd58e3433ba4143550493debb2",
-    "semantic_hash": "2fcde3bd58e3433ba4143550493debb2"
+    "mtime": 1782218506.5537746,
+    "ast_hash": "c125e816e99d90f25d6291094e9aa491",
+    "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\adapters\\__init__.py": {
     "mtime": 1779702399.339762,
@@ -30,13 +30,13 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "C:\\personal\\Auto Error Fixer\\server\\agents\\intent_parser.py": {
-    "mtime": 1782213517.6521244,
-    "ast_hash": "2e33b47a36bfe0e12fd607459f7f13f1",
+    "mtime": 1782218506.555281,
+    "ast_hash": "152922192058ab5c9181692a91480e15",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\agents\\status_agent.py": {
-    "mtime": 1782190277.8144965,
-    "ast_hash": "7786b3086c660e9cca6377a7593cc95b",
+    "mtime": 1782217720.5599484,
+    "ast_hash": "e48d515fc9072b6ba90f70f3c5298890",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\agents\\__init__.py": {
@@ -90,8 +90,8 @@
     "semantic_hash": "c37324b319678540a7186b8384b168e2"
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\create_pr.py": {
-    "mtime": 1782195791.2120142,
-    "ast_hash": "63bae1442278231973934b5bbe2948bd",
+    "mtime": 1782217720.5732863,
+    "ast_hash": "aa804fa71339891a1ca6fd10f9128a7a",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\generate_fix.py": {
@@ -115,8 +115,8 @@
     "semantic_hash": "ec8a92fc75d4ef908f013718ee442326"
   },
   "C:\\personal\\Auto Error Fixer\\server\\utils\\github.py": {
-    "mtime": 1782193696.848621,
-    "ast_hash": "218b6e290c825ff3b5bbe9ddf79bb20c",
+    "mtime": 1782218506.5537746,
+    "ast_hash": "8727f5c14af9f98ffbac7d678988b521",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\utils\\logger.py": {
@@ -125,9 +125,9 @@
     "semantic_hash": "4833ffbe3fdbae15f8da759ff6c0d912"
   },
   "C:\\personal\\Auto Error Fixer\\server\\utils\\shell.py": {
-    "mtime": 1779387404.001547,
-    "ast_hash": "52cf8e9eb2b7d023488248e493fcce15",
-    "semantic_hash": "52cf8e9eb2b7d023488248e493fcce15"
+    "mtime": 1782218506.5537746,
+    "ast_hash": "0a5fe3b8c35bb52600432755741b6353",
+    "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\utils\\__init__.py": {
     "mtime": 1779094559.3096745,
@@ -165,9 +165,9 @@
     "semantic_hash": "8a3b372ff2c523afad07f76c3c3e6234"
   },
   "C:\\personal\\Auto Error Fixer\\requirements.txt": {
-    "mtime": 1779094561.5106895,
-    "ast_hash": "570630c8e2d63b0ff0d758841bbfb39b",
-    "semantic_hash": "570630c8e2d63b0ff0d758841bbfb39b"
+    "mtime": 1782218506.5562913,
+    "ast_hash": "6c6cc388faf40fe539a3afc8aa8c8020",
+    "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\frontend\\index.html": {
     "mtime": 1780035479.7431152,
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\graph_service.py": {
-    "mtime": 1782195246.2219949,
-    "ast_hash": "ba8465982d5d6dc0afd7d2bfd361b182",
+    "mtime": 1782218506.5537746,
+    "ast_hash": "6b6d6657f2c46cff08733c952c007368",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\ARCHITECTURE_DOCUMENTATION.md": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\slack-bridge\\index.js": {
-    "mtime": 1782213925.606765,
-    "ast_hash": "8978dbd6aa8cd1ced5efb9143e8cf859",
+    "mtime": 1782454323.8804266,
+    "ast_hash": "facf39622df1f7a25ff20c5474751101",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\slack-bridge\\package.json": {
@@ -240,18 +240,18 @@
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\assistant.py": {
-    "mtime": 1782213782.4152846,
-    "ast_hash": "6add1c76438ab88f8ea5943223ad7b45",
+    "mtime": 1782218506.5562913,
+    "ast_hash": "486b14752ec7f635722f25f5cfb4379a",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\commands.py": {
-    "mtime": 1782127666.260818,
-    "ast_hash": "c854fa93d3d63f782079f6e8ae58ca2c",
+    "mtime": 1782217720.5599484,
+    "ast_hash": "f5cd65d8a486140ffaa739a7e86955f8",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\context_store.py": {
-    "mtime": 1782127615.7739332,
-    "ast_hash": "3a0d0f8a6774fbb53a741e0d2d848d53",
+    "mtime": 1782218506.5537746,
+    "ast_hash": "bfa2657c39a62950fb641837777880a2",
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\routes\\fix_issue.py": {
@@ -260,8 +260,13 @@
     "semantic_hash": ""
   },
   "C:\\personal\\Auto Error Fixer\\server\\services\\fix_issue.py": {
-    "mtime": 1782212020.847615,
-    "ast_hash": "40bf1e6d1a44a512f12dcbeb05948675",
+    "mtime": 1782217720.5744448,
+    "ast_hash": "f9cdceb6d3c893c729d54247da78a860",
+    "semantic_hash": ""
+  },
+  "C:\\personal\\Auto Error Fixer\\server\\routes\\actions.py": {
+    "mtime": 1782454222.4417486,
+    "ast_hash": "de9b9696b6bbdb70a3536255f16caf5f",
     "semantic_hash": ""
   }
 }

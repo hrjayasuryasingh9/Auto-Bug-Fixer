@@ -15,6 +15,7 @@ from server.routes.status import router as status_router
 from server.routes.repos import router as repos_router
 from server.routes.message import router as message_router
 from server.routes.fix_issue import router as fix_issue_router
+from server.routes.actions import router as actions_router
 from server.utils.logger import logger, LOG_FILE
 
 load_dotenv()
@@ -38,6 +39,7 @@ app.include_router(status_router, prefix="/api/status")
 app.include_router(repos_router, prefix="/api/repos")
 app.include_router(message_router, prefix="/api/message")
 app.include_router(fix_issue_router, prefix="/api/fix-issue")
+app.include_router(actions_router, prefix="/api/actions")
 
 _STATIC = os.path.join(os.path.dirname(__file__), "..", "frontend")
 if os.path.isdir(_STATIC):

@@ -35,6 +35,29 @@ async def _throttled_get(url: str, token: str, params: Optional[dict] = None) ->
         return resp.json()
 
 
+async def _throttled_request(method: str, url: str, token: str,
+                             json: Optional[dict] = None) -> httpx.Response:
+    """Rate-limited write request (PATCH/PUT/DELETE/POST). Returns the raw
+    response so callers can branch on status (e.g. 405 = PR not mergeable)
+    without an exception. Shares the same throttle as `_throttled_get`."""
+    global _last_call
+    async with _RATE_LOCK:
+        now = time.monotonic()
+        wait = _MIN_INTERVAL - (now - _last_call)
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _last_call = time.monotonic()
+
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    logger.info(f"[github_adapter] {method} {url}")
+    async with httpx.AsyncClient(timeout=20) as client:
+        return await client.request(method, url, headers=headers, json=json)
+
+
 async def list_user_repos(token: str, max_repos: int = 200) -> list[dict]:
     """All repos the token can access, most-recently-updated first (paginated).
 
@@ -83,7 +106,23 @@ async def get_open_prs(owner: str, repo: str, token: str) -> list[dict]:
 
 async def get_pr(owner: str, repo: str, pr_number: int, token: str) -> dict:
     data = await _throttled_get(f"{_BASE}/repos/{owner}/{repo}/pulls/{pr_number}", token)
+
+    # GitHub computes `mergeable` asynchronously, so it's often null on the first
+    # read of an open PR. Re-fetch a few times until it settles so the bridge can
+    # reliably decide whether to show the "Merge with main" button.
+    mergeable = data.get("mergeable")
+    if mergeable is None and data.get("state") == "open" and not data.get("merged"):
+        for _ in range(3):
+            await asyncio.sleep(1.0)
+            data = await _throttled_get(f"{_BASE}/repos/{owner}/{repo}/pulls/{pr_number}", token)
+            mergeable = data.get("mergeable")
+            if mergeable is not None:
+                break
+
+    head = data.get("head") or {}
     return {
+        "owner": owner,
+        "repo": repo,
         "number": data["number"],
         "title": data["title"],
         "state": data["state"],
@@ -92,6 +131,12 @@ async def get_pr(owner: str, repo: str, pr_number: int, token: str) -> dict:
         "body": (data.get("body") or "")[:500],
         "merged": data.get("merged", False),
         "draft": data.get("draft", False),
+        # mergeable: True = no conflicts, False = conflicts, None = undetermined.
+        "mergeable": mergeable,
+        "mergeable_state": data.get("mergeable_state"),  # clean|dirty|blocked|behind|…
+        "head_ref": head.get("ref"),
+        # head repo may differ (fork) — only safe to delete a branch in our own repo.
+        "head_repo_full_name": (head.get("repo") or {}).get("full_name"),
     }
 
 
@@ -394,6 +439,88 @@ async def get_repo_info(owner: str, repo: str, token: str) -> dict:
         "readme_excerpt": readme_excerpt,
         "top_files":      top_files,
     }
+
+
+# ── Write operations (issue/PR lifecycle) ────────────────────────────────────
+
+async def close_issue(owner: str, repo: str, issue_number: int, token: str) -> dict:
+    """Mark an issue as fixed → close it with state_reason=completed."""
+    resp = await _throttled_request(
+        "PATCH", f"{_BASE}/repos/{owner}/{repo}/issues/{issue_number}", token,
+        json={"state": "closed", "state_reason": "completed"},
+    )
+    if resp.status_code >= 400:
+        raise RuntimeError(f"GitHub {resp.status_code}: {resp.text[:200]}")
+    data = resp.json()
+    return {"number": data["number"], "state": data["state"], "url": data["html_url"]}
+
+
+async def delete_issue(owner: str, repo: str, issue_number: int, token: str) -> dict:
+    """Permanently delete an issue. The REST API has no delete-issue endpoint —
+    this uses the GraphQL `deleteIssue` mutation (requires admin on the repo)."""
+    # Fetch the issue's GraphQL node id (REST issue payload includes `node_id`).
+    issue = await _throttled_get(f"{_BASE}/repos/{owner}/{repo}/issues/{issue_number}", token)
+    node_id = issue.get("node_id")
+    if not node_id:
+        raise RuntimeError("Could not resolve issue node id for deletion")
+
+    query = "mutation($id: ID!) { deleteIssue(input: {issueId: $id}) { clientMutationId } }"
+    resp = await _throttled_request(
+        "POST", f"{_BASE}/graphql", token,
+        json={"query": query, "variables": {"id": node_id}},
+    )
+    if resp.status_code >= 400:
+        raise RuntimeError(f"GitHub {resp.status_code}: {resp.text[:200]}")
+    body = resp.json()
+    if body.get("errors"):
+        msg = body["errors"][0].get("message", "deletion failed")
+        raise RuntimeError(msg)
+    return {"number": issue_number, "deleted": True}
+
+
+async def merge_pr(owner: str, repo: str, pr_number: int, token: str) -> dict:
+    """Merge a PR into its base branch. Returns {merged, message}. A 405/409
+    means GitHub refused (conflicts / not mergeable) — surfaced, not raised."""
+    resp = await _throttled_request(
+        "PUT", f"{_BASE}/repos/{owner}/{repo}/pulls/{pr_number}/merge", token,
+        json={"merge_method": "merge"},
+    )
+    if resp.status_code == 200:
+        data = resp.json()
+        return {"merged": True, "message": data.get("message", "Merged"), "sha": data.get("sha")}
+    # 405 = not mergeable, 409 = head changed / conflict, 403 = no permission.
+    try:
+        reason = resp.json().get("message", resp.text[:200])
+    except Exception:
+        reason = resp.text[:200]
+    return {"merged": False, "message": reason, "status": resp.status_code}
+
+
+async def close_pr(owner: str, repo: str, pr_number: int, token: str,
+                   delete_branch: bool = True) -> dict:
+    """Close a PR (PRs can't be REST-deleted) and, when safe, delete its head
+    branch — the closest equivalent to 'delete PR'. Skips branch deletion for
+    forks and the default branch."""
+    pr = await get_pr(owner, repo, pr_number, token)
+    resp = await _throttled_request(
+        "PATCH", f"{_BASE}/repos/{owner}/{repo}/pulls/{pr_number}", token,
+        json={"state": "closed"},
+    )
+    if resp.status_code >= 400:
+        raise RuntimeError(f"GitHub {resp.status_code}: {resp.text[:200]}")
+
+    branch_deleted = False
+    head_ref = pr.get("head_ref")
+    repo_data = await _throttled_get(f"{_BASE}/repos/{owner}/{repo}", token)
+    default_branch = repo_data.get("default_branch", "main")
+    same_repo = pr.get("head_repo_full_name") == f"{owner}/{repo}"
+    if delete_branch and head_ref and same_repo and head_ref != default_branch:
+        del_resp = await _throttled_request(
+            "DELETE", f"{_BASE}/repos/{owner}/{repo}/git/refs/heads/{head_ref}", token,
+        )
+        branch_deleted = del_resp.status_code in (200, 204)
+
+    return {"number": pr_number, "closed": True, "branch": head_ref, "branch_deleted": branch_deleted}
 
 
 async def get_commit(owner: str, repo: str, sha: str, token: str) -> dict:

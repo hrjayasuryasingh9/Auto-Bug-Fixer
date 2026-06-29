@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const { addHistory, getHistory } = require('./store');
 
-const API_URL = process.env.API_URL || 'http://localhost:8000';
+const API_URL = process.env.API_URL || ' http://127.0.0.1:8023';
 // Optional: restrict the bot to a single Slack user id (e.g. U0123ABCD)
 const ALLOWED_USER = (process.env.ALLOWED_USER || '').trim();
 
@@ -111,7 +111,7 @@ async function handleQuery(meta, text, client, target) {
   const costSuffix = (costInr != null && costInr > 0)
     ? `\n\n💰 ₹${costInr < 0.0001 ? '<0.0001' : costInr.toFixed(4)}`
     : '';
-  await renderFinal(client, target.channel, statusTs, `${tag}\n${formatted}${costSuffix}`, imagesFromData(data), fixButtonFromData(data));
+  await renderFinal(client, target.channel, statusTs, `${tag}\n${formatted}${costSuffix}`, imagesFromData(data), actionsFromData(data));
   console.log(`📤  [${key}] replied (intent: ${result.intent})`);
 }
 
@@ -280,6 +280,75 @@ app.action('fix_issue', async ({ ack, body, action, client }) => {
   await runFix(client, body.channel?.id, body.user?.id, p.owner, p.repo, p.issue_number);
 });
 
+// ── Issue/PR lifecycle buttons (close, delete, merge) ────────────────────────
+// Shared driver: post a working message, hit the backend action endpoint, then
+// update the message with the outcome (`render` maps the response → final text).
+async function runAction(client, channel, user, working, url, payload, render) {
+  const tag = user ? `<@${user}> ` : '';
+  let statusTs = null;
+  try { statusTs = (await client.chat.postMessage({ channel, text: `${tag}${working}` })).ts; }
+  catch { /* ignore */ }
+
+  let data;
+  try {
+    data = (await axios.post(url, payload, { timeout: 60000 })).data;
+  } catch (e) {
+    data = { success: false, error: e.response?.data?.error || e.message };
+  }
+
+  const txt = `${tag}${render(data)}`;
+  if (statusTs) { try { await client.chat.update({ channel, ts: statusTs, text: txt }); return; } catch { /* fall through */ } }
+  await client.chat.postMessage({ channel, text: txt });
+}
+
+// "Mark as fixed" → close the issue
+app.action('mark_fixed', async ({ ack, body, action, client }) => {
+  await ack();
+  let p; try { p = JSON.parse(action.value); } catch { return; }
+  await runAction(client, body.channel?.id, body.user?.id,
+    `✅ Marking issue #${p.issue_number} as fixed…`,
+    `${API_URL}/api/actions/issue/close`, p,
+    (d) => d.success
+      ? `✅ Issue #${p.issue_number} marked as fixed (closed).`
+      : `❌ Couldn't mark issue #${p.issue_number} as fixed: ${d.error || 'unknown error'}`);
+});
+
+// "Delete issue" → permanently delete the issue
+app.action('delete_issue', async ({ ack, body, action, client }) => {
+  await ack();
+  let p; try { p = JSON.parse(action.value); } catch { return; }
+  await runAction(client, body.channel?.id, body.user?.id,
+    `🗑 Deleting issue #${p.issue_number}…`,
+    `${API_URL}/api/actions/issue/delete`, p,
+    (d) => d.success
+      ? `🗑 Issue #${p.issue_number} deleted.`
+      : `❌ Couldn't delete issue #${p.issue_number}: ${d.error || 'unknown error'}`);
+});
+
+// "Merge with main" → merge the PR
+app.action('merge_pr', async ({ ack, body, action, client }) => {
+  await ack();
+  let p; try { p = JSON.parse(action.value); } catch { return; }
+  await runAction(client, body.channel?.id, body.user?.id,
+    `🔀 Merging PR #${p.pr_number} into main…`,
+    `${API_URL}/api/actions/pr/merge`, p,
+    (d) => d.success
+      ? `🔀 PR #${p.pr_number} merged into main. ✅`
+      : `❌ Couldn't merge PR #${p.pr_number}: ${d.message || d.error || 'not mergeable'}`);
+});
+
+// "Delete PR" → close the PR and delete its branch
+app.action('delete_pr', async ({ ack, body, action, client }) => {
+  await ack();
+  let p; try { p = JSON.parse(action.value); } catch { return; }
+  await runAction(client, body.channel?.id, body.user?.id,
+    `🗑 Deleting PR #${p.pr_number}…`,
+    `${API_URL}/api/actions/pr/close`, p,
+    (d) => d.success
+      ? `🗑 PR #${p.pr_number} closed${d.branch_deleted ? ` and branch \`${d.branch}\` deleted` : ''}.`
+      : `❌ Couldn't delete PR #${p.pr_number}: ${d.error || 'unknown error'}`);
+});
+
 app.error(async (error) => {
   console.error('⚠️  Bolt error:', error?.message || error);
 });
@@ -291,21 +360,42 @@ function imagesFromData(data) {
   return Array.isArray(imgs) ? imgs.filter((u) => typeof u === 'string' && /^https?:\/\//.test(u)) : [];
 }
 
-// "Fix this issue" button — only on issue details (needs owner/repo/number).
-function fixButtonFromData(data) {
-  if (!data || data.type !== 'issue_detail') return null;
+// Interactive buttons for a detail view.
+//  • issue_detail → Fix this issue / Mark as fixed / Delete issue
+//  • pr_detail    → Merge with main (only when no conflicts) / Delete PR
+function actionsFromData(data) {
+  if (!data) return null;
   const it = data.item || {};
-  if (!it.owner || !it.repo || !it.number) return null;
-  return {
-    type: 'actions',
-    elements: [{
-      type: 'button',
-      text: { type: 'plain_text', text: '🛠 Fix this issue', emoji: true },
-      action_id: 'fix_issue',
-      style: 'primary',
-      value: JSON.stringify({ owner: it.owner, repo: it.repo, issue_number: it.number }),
-    }],
-  };
+
+  if (data.type === 'issue_detail') {
+    if (!it.owner || !it.repo || !it.number) return null;
+    if (it.state && it.state !== 'open') return null;   // closed issue → no actions
+    const value = JSON.stringify({ owner: it.owner, repo: it.repo, issue_number: it.number });
+    return {
+      type: 'actions',
+      elements: [
+        { type: 'button', text: { type: 'plain_text', text: '🛠 Fix this issue', emoji: true }, action_id: 'fix_issue',   style: 'primary', value },
+        { type: 'button', text: { type: 'plain_text', text: '✅ Mark as fixed',  emoji: true }, action_id: 'mark_fixed',  value },
+        { type: 'button', text: { type: 'plain_text', text: '🗑 Delete issue',   emoji: true }, action_id: 'delete_issue', style: 'danger', value },
+      ],
+    };
+  }
+
+  if (data.type === 'pr_detail') {
+    if (!it.owner || !it.repo || !it.number) return null;
+    if (it.state !== 'open' || it.merged) return null;  // only open, un-merged PRs are actionable
+    const value = JSON.stringify({ owner: it.owner, repo: it.repo, pr_number: it.number });
+    const elements = [];
+    // mergeable: true = clean, false = conflicts, null = GitHub still computing → stay optimistic
+    // (the backend merge call refuses gracefully if it turns out unmergeable).
+    if (it.mergeable !== false) {
+      elements.push({ type: 'button', text: { type: 'plain_text', text: '🔀 Merge with main', emoji: true }, action_id: 'merge_pr', style: 'primary', value });
+    }
+    elements.push({ type: 'button', text: { type: 'plain_text', text: '🗑 Delete PR', emoji: true }, action_id: 'delete_pr', style: 'danger', value });
+    return { type: 'actions', elements };
+  }
+
+  return null;
 }
 
 // ── Slack mrkdwn formatters ──────────────────────────────────────────────────
@@ -357,6 +447,10 @@ function formatCommitList(data) {
 function formatPRDetail(pr) {
   const status = pr.merged ? 'Merged ✅' : pr.draft ? 'Draft 📝' : pr.state === 'open' ? 'Open 🟢' : 'Closed 🔴';
   const lines  = [`*PR #${pr.number}: ${pr.title}*`, `Status: ${status}`, `Author: ${pr.author}`];
+  if (pr.state === 'open' && !pr.merged) {
+    const mergeNote = pr.mergeable === false ? 'Has conflicts ⚠️' : pr.mergeable === true ? 'No conflicts — ready to merge ✅' : 'Mergeability: checking…';
+    lines.push(mergeNote);
+  }
   if (pr.body) lines.push(`\n_${pr.body.slice(0, 300)}${pr.body.length > 300 ? '…' : ''}_`);
   lines.push(`\n🔗 ${pr.url}`);
   return lines.join('\n');

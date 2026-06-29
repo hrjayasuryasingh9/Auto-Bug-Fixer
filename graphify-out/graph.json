@@ -103,7 +103,7 @@
       "label": "serve_ui()",
       "file_type": "code",
       "source_file": "server/main.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "id": "server_main_serve_ui",
       "community": 10,
       "norm_label": "serve_ui()"
@@ -112,7 +112,7 @@
       "label": "startup()",
       "file_type": "code",
       "source_file": "server/main.py",
-      "source_location": "L52",
+      "source_location": "L54",
       "id": "server_main_startup",
       "community": 10,
       "norm_label": "startup()"
@@ -121,7 +121,7 @@
       "label": "log_requests()",
       "file_type": "code",
       "source_file": "server/main.py",
-      "source_location": "L60",
+      "source_location": "L62",
       "id": "server_main_log_requests",
       "community": 10,
       "norm_label": "log_requests()"
@@ -130,7 +130,7 @@
       "label": "Request",
       "file_type": "code",
       "source_file": "server/main.py",
-      "source_location": "L60",
+      "source_location": "L62",
       "id": "server_main_py_request",
       "community": 10,
       "norm_label": "request"
@@ -139,7 +139,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "server/main.py",
-      "source_location": "L68",
+      "source_location": "L70",
       "id": "server_main_health",
       "community": 10,
       "norm_label": "health()"
@@ -166,7 +166,7 @@
       "label": "_throttled_get()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "id": "adapters_github_adapter_throttled_get",
       "community": 6,
       "norm_label": "_throttled_get()"
@@ -175,52 +175,70 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "id": "server_adapters_github_adapter_py_str",
       "community": 6,
       "norm_label": "str"
     },
     {
+      "label": "_throttled_request()",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L38",
+      "id": "adapters_github_adapter_throttled_request",
+      "community": 2,
+      "norm_label": "_throttled_request()"
+    },
+    {
+      "label": "Response",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L38",
+      "id": "response",
+      "community": 2,
+      "norm_label": "response"
+    },
+    {
       "label": "list_user_repos()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L35",
+      "source_location": "L61",
       "id": "adapters_github_adapter_list_user_repos",
-      "community": 6,
+      "community": 103,
       "norm_label": "list_user_repos()"
     },
     {
       "label": "int",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L35",
+      "source_location": "L61",
       "id": "server_adapters_github_adapter_py_int",
-      "community": 6,
+      "community": 103,
       "norm_label": "int"
     },
     {
       "label": "repo_exists()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L68",
+      "source_location": "L94",
       "id": "adapters_github_adapter_repo_exists",
-      "community": 6,
+      "community": 103,
       "norm_label": "repo_exists()"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L68",
+      "source_location": "L94",
       "id": "server_adapters_github_adapter_py_bool",
-      "community": 6,
+      "community": 103,
       "norm_label": "bool"
     },
     {
       "label": "get_open_prs()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L76",
+      "source_location": "L102",
       "id": "adapters_github_adapter_get_open_prs",
       "community": 6,
       "norm_label": "get_open_prs()"
@@ -229,7 +247,7 @@
       "label": "get_pr()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L81",
+      "source_location": "L107",
       "id": "adapters_github_adapter_get_pr",
       "community": 6,
       "norm_label": "get_pr()"
@@ -238,7 +256,7 @@
       "label": "get_open_issues()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L95",
+      "source_location": "L143",
       "id": "adapters_github_adapter_get_open_issues",
       "community": 6,
       "norm_label": "get_open_issues()"
@@ -247,7 +265,7 @@
       "label": "get_recent_commits()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L105",
+      "source_location": "L153",
       "id": "adapters_github_adapter_get_recent_commits",
       "community": 6,
       "norm_label": "get_recent_commits()"
@@ -256,7 +274,7 @@
       "label": "_extract_images()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L110",
+      "source_location": "L158",
       "id": "adapters_github_adapter_extract_images",
       "community": 6,
       "norm_label": "_extract_images()"
@@ -265,7 +283,7 @@
       "label": "_strip_images()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L123",
+      "source_location": "L171",
       "id": "adapters_github_adapter_strip_images",
       "community": 6,
       "norm_label": "_strip_images()"
@@ -274,34 +292,34 @@
       "label": "fetch_image_bytes()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L132",
+      "source_location": "L180",
       "id": "adapters_github_adapter_fetch_image_bytes",
-      "community": 6,
+      "community": 108,
       "norm_label": "fetch_image_bytes()"
     },
     {
       "label": "bytes",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L132",
+      "source_location": "L180",
       "id": "bytes",
-      "community": 6,
+      "community": 108,
       "norm_label": "bytes"
     },
     {
       "label": "resolve_image_url()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L148",
+      "source_location": "L196",
       "id": "adapters_github_adapter_resolve_image_url",
-      "community": 6,
+      "community": 108,
       "norm_label": "resolve_image_url()"
     },
     {
       "label": "get_issue_detail()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L170",
+      "source_location": "L218",
       "id": "adapters_github_adapter_get_issue_detail",
       "community": 6,
       "norm_label": "get_issue_detail()"
@@ -310,80 +328,125 @@
       "label": "search_files_in_repo()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L212",
+      "source_location": "L260",
       "id": "adapters_github_adapter_search_files_in_repo",
-      "community": 6,
+      "community": 97,
       "norm_label": "search_files_in_repo()"
     },
     {
       "label": "get_file_or_dir()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L241",
+      "source_location": "L289",
       "id": "adapters_github_adapter_get_file_or_dir",
-      "community": 6,
+      "community": 97,
       "norm_label": "get_file_or_dir()"
     },
     {
       "label": "search_code_in_repo()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L288",
+      "source_location": "L336",
       "id": "adapters_github_adapter_search_code_in_repo",
-      "community": 6,
+      "community": 102,
       "norm_label": "search_code_in_repo()"
     },
     {
       "label": "get_file_content()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L307",
+      "source_location": "L355",
       "id": "adapters_github_adapter_get_file_content",
-      "community": 6,
+      "community": 102,
       "norm_label": "get_file_content()"
     },
     {
       "label": "get_repo_tree_summary()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L322",
+      "source_location": "L370",
       "id": "adapters_github_adapter_get_repo_tree_summary",
-      "community": 6,
+      "community": 106,
       "norm_label": "get_repo_tree_summary()"
     },
     {
       "label": "get_repo_info()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L353",
+      "source_location": "L401",
       "id": "adapters_github_adapter_get_repo_info",
       "community": 6,
       "norm_label": "get_repo_info()"
     },
     {
+      "label": "close_issue()",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L446",
+      "id": "adapters_github_adapter_close_issue",
+      "community": 2,
+      "norm_label": "close_issue()"
+    },
+    {
+      "label": "delete_issue()",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L458",
+      "id": "adapters_github_adapter_delete_issue",
+      "community": 2,
+      "norm_label": "delete_issue()"
+    },
+    {
+      "label": "merge_pr()",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L481",
+      "id": "adapters_github_adapter_merge_pr",
+      "community": 2,
+      "norm_label": "merge_pr()"
+    },
+    {
+      "label": "close_pr()",
+      "file_type": "code",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L499",
+      "id": "adapters_github_adapter_close_pr",
+      "community": 2,
+      "norm_label": "close_pr()"
+    },
+    {
       "label": "get_commit()",
       "file_type": "code",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L396",
+      "source_location": "L526",
       "id": "adapters_github_adapter_get_commit",
       "community": 6,
       "norm_label": "get_commit()"
     },
     {
-      "label": "All repos the token can access, most-recently-updated first (paginated).      No",
+      "label": "Rate-limited write request (PATCH/PUT/DELETE/POST). Returns the raw     respons",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L36",
-      "id": "adapters_github_adapter_rationale_36",
-      "community": 6,
-      "norm_label": "all repos the token can access, most-recently-updated first (paginated).      no"
+      "source_location": "L40",
+      "id": "adapters_github_adapter_rationale_40",
+      "community": 2,
+      "norm_label": "rate-limited write request (patch/put/delete/post). returns the raw     respons"
+    },
+    {
+      "label": "All repos the token can access, most-recently-updated first (paginated).",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L62",
+      "id": "adapters_github_adapter_rationale_62",
+      "community": 103,
+      "norm_label": "all repos the token can access, most-recently-updated first (paginated)."
     },
     {
       "label": "Image URLs from markdown ![](url) AND HTML <img src=\"url\"> in issue/PR bodies.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L111",
-      "id": "adapters_github_adapter_rationale_111",
+      "source_location": "L159",
+      "id": "adapters_github_adapter_rationale_159",
       "community": 6,
       "norm_label": "image urls from markdown ![](url) and html <img src=\"url\"> in issue/pr bodies."
     },
@@ -391,8 +454,8 @@
       "label": "Remove image markup so the displayed text doesn't show raw <img> tags / md.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L124",
-      "id": "adapters_github_adapter_rationale_124",
+      "source_location": "L172",
+      "id": "adapters_github_adapter_rationale_172",
       "community": 6,
       "norm_label": "remove image markup so the displayed text doesn't show raw <img> tags / md."
     },
@@ -400,64 +463,100 @@
       "label": "Download image bytes (+ mime) \u2014 for passing screenshots to Claude vision.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L133",
-      "id": "adapters_github_adapter_rationale_133",
-      "community": 6,
+      "source_location": "L181",
+      "id": "adapters_github_adapter_rationale_181",
+      "community": 108,
       "norm_label": "download image bytes (+ mime) \u2014 for passing screenshots to claude vision."
     },
     {
-      "label": "Turn an auth-gated GitHub image URL into a publicly-fetchable one.      `github.",
+      "label": "Turn an auth-gated GitHub image URL into a publicly-fetchable one.      `githu",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L149",
-      "id": "adapters_github_adapter_rationale_149",
-      "community": 6,
-      "norm_label": "turn an auth-gated github image url into a publicly-fetchable one.      `github."
+      "source_location": "L197",
+      "id": "adapters_github_adapter_rationale_197",
+      "community": 108,
+      "norm_label": "turn an auth-gated github image url into a publicly-fetchable one.      `githu"
     },
     {
       "label": "Search the ENTIRE repo tree recursively for files/folders matching a term.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L213",
-      "id": "adapters_github_adapter_rationale_213",
-      "community": 6,
+      "source_location": "L261",
+      "id": "adapters_github_adapter_rationale_261",
+      "community": 106,
       "norm_label": "search the entire repo tree recursively for files/folders matching a term."
     },
     {
       "label": "Returns directory listing or file content from the repo tree.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L242",
-      "id": "adapters_github_adapter_rationale_242",
-      "community": 6,
+      "source_location": "L290",
+      "id": "adapters_github_adapter_rationale_290",
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree."
     },
     {
       "label": "Search file CONTENTS (GitHub code search) \u2014 finds files mentioning the terms,",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L289",
-      "id": "adapters_github_adapter_rationale_289",
-      "community": 6,
+      "source_location": "L337",
+      "id": "adapters_github_adapter_rationale_337",
+      "community": 102,
       "norm_label": "search file contents (github code search) \u2014 finds files mentioning the terms,"
     },
     {
       "label": "Full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L308",
-      "id": "adapters_github_adapter_rationale_308",
-      "community": 6,
+      "source_location": "L356",
+      "id": "adapters_github_adapter_rationale_356",
+      "community": 102,
       "norm_label": "full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)"
     },
     {
       "label": "Single API call \u2192 compact 2-level repo structure string for Claude context.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L323",
-      "id": "adapters_github_adapter_rationale_323",
-      "community": 6,
+      "source_location": "L371",
+      "id": "adapters_github_adapter_rationale_371",
+      "community": 106,
       "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context."
+    },
+    {
+      "label": "Mark an issue as fixed \u2192 close it with state_reason=completed.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L447",
+      "id": "adapters_github_adapter_rationale_447",
+      "community": 2,
+      "norm_label": "mark an issue as fixed \u2192 close it with state_reason=completed."
+    },
+    {
+      "label": "Permanently delete an issue. The REST API has no delete-issue endpoint \u2014     th",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L459",
+      "id": "adapters_github_adapter_rationale_459",
+      "community": 2,
+      "norm_label": "permanently delete an issue. the rest api has no delete-issue endpoint \u2014     th"
+    },
+    {
+      "label": "Merge a PR into its base branch. Returns {merged, message}. A 405/409     means",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L482",
+      "id": "adapters_github_adapter_rationale_482",
+      "community": 2,
+      "norm_label": "merge a pr into its base branch. returns {merged, message}. a 405/409     means"
+    },
+    {
+      "label": "Close a PR (PRs can't be REST-deleted) and, when safe, delete its head     bran",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L501",
+      "id": "adapters_github_adapter_rationale_501",
+      "community": 2,
+      "norm_label": "close a pr (prs can't be rest-deleted) and, when safe, delete its head     bran"
     },
     {
       "label": "whatsapp_adapter.py",
@@ -472,7 +571,7 @@
       "label": "send_text()",
       "file_type": "code",
       "source_file": "server/adapters/whatsapp_adapter.py",
-      "source_location": "L8",
+      "source_location": "L11",
       "id": "adapters_whatsapp_adapter_send_text",
       "community": 75,
       "norm_label": "send_text()"
@@ -481,7 +580,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/adapters/whatsapp_adapter.py",
-      "source_location": "L8",
+      "source_location": "L11",
       "id": "server_adapters_whatsapp_adapter_py_str",
       "community": 75,
       "norm_label": "str"
@@ -490,7 +589,7 @@
       "label": "parse_incoming()",
       "file_type": "code",
       "source_file": "server/adapters/whatsapp_adapter.py",
-      "source_location": "L33",
+      "source_location": "L36",
       "id": "adapters_whatsapp_adapter_parse_incoming",
       "community": 75,
       "norm_label": "parse_incoming()"
@@ -499,8 +598,8 @@
       "label": "Return list of {from, text, message_id} for each text message in a webhook paylo",
       "file_type": "rationale",
       "source_file": "server/adapters/whatsapp_adapter.py",
-      "source_location": "L34",
-      "id": "adapters_whatsapp_adapter_rationale_34",
+      "source_location": "L37",
+      "id": "adapters_whatsapp_adapter_rationale_37",
       "community": 75,
       "norm_label": "return list of {from, text, message_id} for each text message in a webhook paylo"
     },
@@ -519,32 +618,32 @@
       "source_file": "server/agents/intent_parser.py",
       "source_location": "L1",
       "id": "server_agents_intent_parser_py",
-      "community": 86,
+      "community": 104,
       "norm_label": "intent_parser.py"
     },
     {
       "label": "calc_cost_inr()",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L250",
+      "source_location": "L253",
       "id": "agents_intent_parser_calc_cost_inr",
-      "community": 86,
+      "community": 104,
       "norm_label": "calc_cost_inr()"
     },
     {
       "label": "float",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L250",
+      "source_location": "L253",
       "id": "float",
-      "community": 86,
+      "community": 104,
       "norm_label": "float"
     },
     {
       "label": "parse_intent()",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L256",
+      "source_location": "L259",
       "id": "agents_intent_parser_parse_intent",
       "community": 86,
       "norm_label": "parse_intent()"
@@ -553,37 +652,37 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L256",
+      "source_location": "L259",
       "id": "server_agents_intent_parser_py_str",
-      "community": 86,
+      "community": 104,
       "norm_label": "str"
     },
     {
       "label": "generate_chat_reply()",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L305",
+      "source_location": "L308",
       "id": "agents_intent_parser_generate_chat_reply",
-      "community": 86,
+      "community": 104,
       "norm_label": "generate_chat_reply()"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L305",
+      "source_location": "L308",
       "id": "server_agents_intent_parser_py_bool",
-      "community": 86,
+      "community": 104,
       "norm_label": "bool"
     },
     {
-      "label": "Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall",
+      "label": "Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fa",
       "file_type": "rationale",
       "source_file": "server/agents/intent_parser.py",
-      "source_location": "L257",
-      "id": "agents_intent_parser_rationale_257",
+      "source_location": "L260",
+      "id": "agents_intent_parser_rationale_260",
       "community": 86,
-      "norm_label": "classify intent using openai gpt-4o-mini.      `api_key` is the openai key; fall"
+      "norm_label": "classify intent using openai gpt-4o-mini.      `api_key` is the openai key; fa"
     },
     {
       "label": "status_agent.py",
@@ -598,7 +697,7 @@
       "label": "handle_status_query()",
       "file_type": "code",
       "source_file": "server/agents/status_agent.py",
-      "source_location": "L9",
+      "source_location": "L11",
       "id": "agents_status_agent_handle_status_query",
       "community": 6,
       "norm_label": "handle_status_query()"
@@ -607,7 +706,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/agents/status_agent.py",
-      "source_location": "L9",
+      "source_location": "L11",
       "id": "server_agents_status_agent_py_str",
       "community": 6,
       "norm_label": "str"
@@ -616,8 +715,8 @@
       "label": "Returns (plain_text_fallback, structured_data) tuple.",
       "file_type": "rationale",
       "source_file": "server/agents/status_agent.py",
-      "source_location": "L10",
-      "id": "agents_status_agent_rationale_10",
+      "source_location": "L12",
+      "id": "agents_status_agent_rationale_12",
       "community": 6,
       "norm_label": "returns (plain_text_fallback, structured_data) tuple."
     },
@@ -636,7 +735,7 @@
       "source_file": "server/models/schemas.py",
       "source_location": "L1",
       "id": "server_models_schemas_py",
-      "community": 1,
+      "community": 99,
       "norm_label": "schemas.py"
     },
     {
@@ -645,7 +744,7 @@
       "source_file": "server/models/schemas.py",
       "source_location": "L5",
       "id": "models_schemas_errorreport",
-      "community": 1,
+      "community": 99,
       "norm_label": "errorreport"
     },
     {
@@ -654,7 +753,7 @@
       "source_file": "",
       "source_location": "",
       "id": "basemodel",
-      "community": 86,
+      "community": 99,
       "norm_label": "basemodel"
     },
     {
@@ -663,7 +762,7 @@
       "source_file": "server/models/schemas.py",
       "source_location": "L24",
       "id": "models_schemas_fixresponse",
-      "community": 1,
+      "community": 99,
       "norm_label": "fixresponse"
     },
     {
@@ -676,12 +775,93 @@
       "norm_label": "__init__.py"
     },
     {
+      "label": "actions.py",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L1",
+      "id": "server_routes_actions_py",
+      "community": 2,
+      "norm_label": "actions.py"
+    },
+    {
+      "label": "IssueAction",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L27",
+      "id": "routes_actions_issueaction",
+      "community": 2,
+      "norm_label": "issueaction"
+    },
+    {
+      "label": "PRAction",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L33",
+      "id": "routes_actions_praction",
+      "community": 2,
+      "norm_label": "praction"
+    },
+    {
+      "label": "_no_token()",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L39",
+      "id": "routes_actions_no_token",
+      "community": 2,
+      "norm_label": "_no_token()"
+    },
+    {
+      "label": "issue_close()",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L44",
+      "id": "routes_actions_issue_close",
+      "community": 2,
+      "norm_label": "issue_close()"
+    },
+    {
+      "label": "issue_delete()",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L58",
+      "id": "routes_actions_issue_delete",
+      "community": 2,
+      "norm_label": "issue_delete()"
+    },
+    {
+      "label": "pr_merge()",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L72",
+      "id": "routes_actions_pr_merge",
+      "community": 2,
+      "norm_label": "pr_merge()"
+    },
+    {
+      "label": "pr_close()",
+      "file_type": "code",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L87",
+      "id": "routes_actions_pr_close",
+      "community": 2,
+      "norm_label": "pr_close()"
+    },
+    {
+      "label": "Issue / PR lifecycle actions \u2014 triggered by Slack interactive buttons.  These ar",
+      "file_type": "rationale",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L1",
+      "id": "routes_actions_rationale_1",
+      "community": 2,
+      "norm_label": "issue / pr lifecycle actions \u2014 triggered by slack interactive buttons.  these ar"
+    },
+    {
       "label": "ai_fix.py",
       "file_type": "code",
       "source_file": "server/routes/ai_fix.py",
       "source_location": "L1",
       "id": "server_routes_ai_fix_py",
-      "community": 1,
+      "community": 99,
       "norm_label": "ai_fix.py"
     },
     {
@@ -690,7 +870,7 @@
       "source_file": "server/routes/ai_fix.py",
       "source_location": "L12",
       "id": "routes_ai_fix_handle_error",
-      "community": 1,
+      "community": 99,
       "norm_label": "handle_error()"
     },
     {
@@ -699,7 +879,7 @@
       "source_file": "server/routes/ai_fix.py",
       "source_location": "L12",
       "id": "server_routes_ai_fix_py_errorreport",
-      "community": 1,
+      "community": 99,
       "norm_label": "errorreport"
     },
     {
@@ -708,7 +888,7 @@
       "source_file": "server/routes/chat.py",
       "source_location": "L1",
       "id": "server_routes_chat_py",
-      "community": 86,
+      "community": 104,
       "norm_label": "chat.py"
     },
     {
@@ -717,7 +897,7 @@
       "source_file": "server/routes/chat.py",
       "source_location": "L13",
       "id": "routes_chat_chatrequest",
-      "community": 86,
+      "community": 104,
       "norm_label": "chatrequest"
     },
     {
@@ -726,7 +906,7 @@
       "source_file": "server/routes/chat.py",
       "source_location": "L24",
       "id": "routes_chat_chatresponse",
-      "community": 86,
+      "community": 104,
       "norm_label": "chatresponse"
     },
     {
@@ -735,7 +915,7 @@
       "source_file": "server/routes/chat.py",
       "source_location": "L33",
       "id": "routes_chat_chat",
-      "community": 86,
+      "community": 104,
       "norm_label": "chat()"
     },
     {
@@ -744,7 +924,7 @@
       "source_file": "server/routes/fix_issue.py",
       "source_location": "L1",
       "id": "server_routes_fix_issue_py",
-      "community": 1,
+      "community": 109,
       "norm_label": "fix_issue.py"
     },
     {
@@ -753,7 +933,7 @@
       "source_file": "server/routes/fix_issue.py",
       "source_location": "L22",
       "id": "routes_fix_issue_fixissuerequest",
-      "community": 1,
+      "community": 109,
       "norm_label": "fixissuerequest"
     },
     {
@@ -762,7 +942,7 @@
       "source_file": "server/routes/fix_issue.py",
       "source_location": "L29",
       "id": "routes_fix_issue_handle_fix_issue",
-      "community": 1,
+      "community": 109,
       "norm_label": "handle_fix_issue()"
     },
     {
@@ -771,7 +951,7 @@
       "source_file": "server/routes/fix_issue.py",
       "source_location": "L40",
       "id": "routes_fix_issue_stream_fix_issue",
-      "community": 1,
+      "community": 109,
       "norm_label": "stream_fix_issue()"
     },
     {
@@ -780,7 +960,7 @@
       "source_file": "server/routes/fix_issue.py",
       "source_location": "L1",
       "id": "routes_fix_issue_rationale_1",
-      "community": 1,
+      "community": 109,
       "norm_label": "issue \u2192 pr endpoint. triggered by the slack \"fix this issue\" button / command."
     },
     {
@@ -996,7 +1176,7 @@
       "source_file": "server/routes/repos.py",
       "source_location": "L1",
       "id": "server_routes_repos_py",
-      "community": 6,
+      "community": 103,
       "norm_label": "repos.py"
     },
     {
@@ -1005,7 +1185,7 @@
       "source_file": "server/routes/repos.py",
       "source_location": "L17",
       "id": "routes_repos_list_repos",
-      "community": 6,
+      "community": 103,
       "norm_label": "list_repos()"
     },
     {
@@ -1014,7 +1194,7 @@
       "source_file": "server/routes/repos.py",
       "source_location": "L37",
       "id": "routes_repos_check_repo",
-      "community": 6,
+      "community": 103,
       "norm_label": "check_repo()"
     },
     {
@@ -1023,7 +1203,7 @@
       "source_file": "server/routes/repos.py",
       "source_location": "L37",
       "id": "server_routes_repos_py_str",
-      "community": 6,
+      "community": 103,
       "norm_label": "str"
     },
     {
@@ -1032,7 +1212,7 @@
       "source_file": "server/routes/repos.py",
       "source_location": "L1",
       "id": "routes_repos_rationale_1",
-      "community": 6,
+      "community": 103,
       "norm_label": "repo discovery + selection.  the github token stays server-side (.env). bridges"
     },
     {
@@ -1041,7 +1221,7 @@
       "source_file": "server/routes/status.py",
       "source_location": "L1",
       "id": "server_routes_status_py",
-      "community": 6,
+      "community": 110,
       "norm_label": "status.py"
     },
     {
@@ -1050,7 +1230,7 @@
       "source_file": "server/routes/status.py",
       "source_location": "L19",
       "id": "routes_status_statusrequest",
-      "community": 6,
+      "community": 110,
       "norm_label": "statusrequest"
     },
     {
@@ -1059,7 +1239,7 @@
       "source_file": "server/routes/status.py",
       "source_location": "L34",
       "id": "routes_status_status",
-      "community": 6,
+      "community": 110,
       "norm_label": "status()"
     },
     {
@@ -1068,7 +1248,7 @@
       "source_file": "server/routes/status.py",
       "source_location": "L1",
       "id": "routes_status_rationale_1",
-      "community": 6,
+      "community": 110,
       "norm_label": "status query endpoint.  executes an already-classified `status_query` intent aga"
     },
     {
@@ -1149,7 +1329,7 @@
       "source_file": "server/services/analyze_error.py",
       "source_location": "L1",
       "id": "server_services_analyze_error_py",
-      "community": 1,
+      "community": 99,
       "norm_label": "analyze_error.py"
     },
     {
@@ -1158,7 +1338,7 @@
       "source_file": "server/services/analyze_error.py",
       "source_location": "L12",
       "id": "services_analyze_error_process_error",
-      "community": 1,
+      "community": 99,
       "norm_label": "process_error()"
     },
     {
@@ -1167,7 +1347,7 @@
       "source_file": "server/services/analyze_error.py",
       "source_location": "L12",
       "id": "server_services_analyze_error_py_errorreport",
-      "community": 1,
+      "community": 99,
       "norm_label": "errorreport"
     },
     {
@@ -1176,7 +1356,7 @@
       "source_file": "server/services/apply_patch.py",
       "source_location": "L1",
       "id": "server_services_apply_patch_py",
-      "community": 1,
+      "community": 99,
       "norm_label": "apply_patch.py"
     },
     {
@@ -1185,7 +1365,7 @@
       "source_file": "server/services/apply_patch.py",
       "source_location": "L5",
       "id": "services_apply_patch_apply_patch",
-      "community": 1,
+      "community": 99,
       "norm_label": "apply_patch()"
     },
     {
@@ -1194,7 +1374,7 @@
       "source_file": "server/services/apply_patch.py",
       "source_location": "L5",
       "id": "server_services_apply_patch_py_str",
-      "community": 1,
+      "community": 99,
       "norm_label": "str"
     },
     {
@@ -1203,152 +1383,152 @@
       "source_file": "server/services/assistant.py",
       "source_location": "L1",
       "id": "server_services_assistant_py",
-      "community": 86,
+      "community": 105,
       "norm_label": "assistant.py"
     },
     {
       "label": "_last_id_of_kind()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L40",
+      "source_location": "L43",
       "id": "services_assistant_last_id_of_kind",
-      "community": 86,
+      "community": 105,
       "norm_label": "_last_id_of_kind()"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L40",
+      "source_location": "L43",
       "id": "server_services_assistant_py_str",
-      "community": 86,
+      "community": 98,
       "norm_label": "str"
     },
     {
       "label": "_ordinal_in()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L62",
+      "source_location": "L65",
       "id": "services_assistant_ordinal_in",
-      "community": 86,
+      "community": 105,
       "norm_label": "_ordinal_in()"
     },
     {
       "label": "_desired_kind()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L73",
+      "source_location": "L76",
       "id": "services_assistant_desired_kind",
-      "community": 86,
+      "community": 96,
       "norm_label": "_desired_kind()"
     },
     {
       "label": "_find_list()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L85",
+      "source_location": "L88",
       "id": "services_assistant_find_list",
-      "community": 86,
+      "community": 96,
       "norm_label": "_find_list()"
     },
     {
       "label": "_resolve_ordinal()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L115",
+      "source_location": "L118",
       "id": "services_assistant_resolve_ordinal",
-      "community": 86,
+      "community": 96,
       "norm_label": "_resolve_ordinal()"
     },
     {
       "label": "_wants_depth()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L144",
+      "source_location": "L147",
       "id": "services_assistant_wants_depth",
-      "community": 86,
+      "community": 98,
       "norm_label": "_wants_depth()"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L144",
+      "source_location": "L147",
       "id": "server_services_assistant_py_bool",
-      "community": 86,
+      "community": 98,
       "norm_label": "bool"
     },
     {
       "label": "run_assistant()",
       "file_type": "code",
       "source_file": "server/services/assistant.py",
-      "source_location": "L148",
+      "source_location": "L151",
       "id": "services_assistant_run_assistant",
-      "community": 86,
+      "community": 98,
       "norm_label": "run_assistant()"
     },
     {
-      "label": "Core assistant orchestration: intent \u2192 graph context \u2192 routed reply.  Shared by",
+      "label": "Core assistant orchestration: intent \u2192 graph context \u2192 routed reply.  Shared b",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L1",
       "id": "services_assistant_rationale_1",
-      "community": 86,
-      "norm_label": "core assistant orchestration: intent \u2192 graph context \u2192 routed reply.  shared by"
+      "community": 105,
+      "norm_label": "core assistant orchestration: intent \u2192 graph context \u2192 routed reply.  shared b"
     },
     {
-      "label": "Most recent id for a specific kind ('issues'|'prs'), from a list (its     *#N* m",
+      "label": "Most recent id for a specific kind ('issues'|'prs'), from a list (its     *#N*",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L41",
-      "id": "services_assistant_rationale_41",
-      "community": 86,
-      "norm_label": "most recent id for a specific kind ('issues'|'prs'), from a list (its     *#n* m"
+      "source_location": "L44",
+      "id": "services_assistant_rationale_44",
+      "community": 105,
+      "norm_label": "most recent id for a specific kind ('issues'|'prs'), from a list (its     *#n*"
     },
     {
       "label": "Return 1-based position, -1 for 'last', or None.",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L63",
-      "id": "services_assistant_rationale_63",
-      "community": 86,
+      "source_location": "L66",
+      "id": "services_assistant_rationale_66",
+      "community": 105,
       "norm_label": "return 1-based position, -1 for 'last', or none."
     },
     {
       "label": "What the user explicitly asked for: 'prs' | 'commits' | 'issues' | None.",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L74",
-      "id": "services_assistant_rationale_74",
-      "community": 86,
+      "source_location": "L77",
+      "id": "services_assistant_rationale_77",
+      "community": 96,
       "norm_label": "what the user explicitly asked for: 'prs' | 'commits' | 'issues' | none."
     },
     {
       "label": "Most recent LIST message (matched by its header) \u2192 (kind, [ids in order]).",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L86",
-      "id": "services_assistant_rationale_86",
-      "community": 86,
+      "source_location": "L89",
+      "id": "services_assistant_rationale_89",
+      "community": 96,
       "norm_label": "most recent list message (matched by its header) \u2192 (kind, [ids in order])."
     },
     {
-      "label": "If the user says 'the Nth one' / 'the last one', override the entity id     dete",
+      "label": "If the user says 'the Nth one' / 'the last one', override the entity id     det",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L116",
-      "id": "services_assistant_rationale_116",
-      "community": 86,
-      "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     dete"
+      "source_location": "L119",
+      "id": "services_assistant_rationale_119",
+      "community": 96,
+      "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     det"
     },
     {
-      "label": "Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)     r",
+      "label": "Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
-      "source_location": "L158",
-      "id": "services_assistant_rationale_158",
-      "community": 86,
-      "norm_label": "returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)     r"
+      "source_location": "L161",
+      "id": "services_assistant_rationale_161",
+      "community": 98,
+      "norm_label": "returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)"
     },
     {
       "label": "clone_repo.py",
@@ -1356,7 +1536,7 @@
       "source_file": "server/services/clone_repo.py",
       "source_location": "L1",
       "id": "server_services_clone_repo_py",
-      "community": 1,
+      "community": 100,
       "norm_label": "clone_repo.py"
     },
     {
@@ -1365,7 +1545,7 @@
       "source_file": "server/services/clone_repo.py",
       "source_location": "L8",
       "id": "services_clone_repo_force_rmtree",
-      "community": 1,
+      "community": 100,
       "norm_label": "_force_rmtree()"
     },
     {
@@ -1374,7 +1554,7 @@
       "source_file": "server/services/clone_repo.py",
       "source_location": "L8",
       "id": "server_services_clone_repo_py_str",
-      "community": 1,
+      "community": 100,
       "norm_label": "str"
     },
     {
@@ -1383,7 +1563,7 @@
       "source_file": "server/services/clone_repo.py",
       "source_location": "L19",
       "id": "services_clone_repo_clone_repo",
-      "community": 1,
+      "community": 100,
       "norm_label": "clone_repo()"
     },
     {
@@ -1392,7 +1572,7 @@
       "source_file": "server/services/clone_repo.py",
       "source_location": "L9",
       "id": "services_clone_repo_rationale_9",
-      "community": 1,
+      "community": 100,
       "norm_label": "windows-safe recursive delete \u2014 clears read-only flags set by git."
     },
     {
@@ -1408,7 +1588,7 @@
       "label": "is_command()",
       "file_type": "code",
       "source_file": "server/services/commands.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "services_commands_is_command",
       "community": 75,
       "norm_label": "is_command()"
@@ -1417,7 +1597,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/commands.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "server_services_commands_py_str",
       "community": 75,
       "norm_label": "str"
@@ -1426,7 +1606,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "server/services/commands.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "server_services_commands_py_bool",
       "community": 75,
       "norm_label": "bool"
@@ -1435,7 +1615,7 @@
       "label": "resolve_and_set_repo()",
       "file_type": "code",
       "source_file": "server/services/commands.py",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "services_commands_resolve_and_set_repo",
       "community": 75,
       "norm_label": "resolve_and_set_repo()"
@@ -1444,28 +1624,28 @@
       "label": "handle_command()",
       "file_type": "code",
       "source_file": "server/services/commands.py",
-      "source_location": "L83",
+      "source_location": "L85",
       "id": "services_commands_handle_command",
       "community": 75,
       "norm_label": "handle_command()"
     },
     {
-      "label": "Explicit `!` commands \u2014 handled deterministically (no LLM classification).  Retu",
+      "label": "Explicit `!` commands \u2014 handled deterministically (no LLM classification).  Re",
       "file_type": "rationale",
       "source_file": "server/services/commands.py",
       "source_location": "L1",
       "id": "services_commands_rationale_1",
       "community": 75,
-      "norm_label": "explicit `!` commands \u2014 handled deterministically (no llm classification).  retu"
+      "norm_label": "explicit `!` commands \u2014 handled deterministically (no llm classification).  re"
     },
     {
-      "label": "Validate + persist the active repo for this context. Shared by the !repo     com",
+      "label": "Validate + persist the active repo for this context. Shared by the !repo     co",
       "file_type": "rationale",
       "source_file": "server/services/commands.py",
-      "source_location": "L39",
-      "id": "services_commands_rationale_39",
+      "source_location": "L41",
+      "id": "services_commands_rationale_41",
       "community": 75,
-      "norm_label": "validate + persist the active repo for this context. shared by the !repo     com"
+      "norm_label": "validate + persist the active repo for this context. shared by the !repo     co"
     },
     {
       "label": "context_store.py",
@@ -1480,7 +1660,7 @@
       "label": "_db()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "services_context_store_db",
       "community": 75,
       "norm_label": "_db()"
@@ -1489,7 +1669,7 @@
       "label": "Connection",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "connection",
       "community": 75,
       "norm_label": "connection"
@@ -1498,7 +1678,7 @@
       "label": "_key()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L48",
+      "source_location": "L51",
       "id": "services_context_store_key",
       "community": 75,
       "norm_label": "_key()"
@@ -1507,7 +1687,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L48",
+      "source_location": "L51",
       "id": "server_services_context_store_py_str",
       "community": 75,
       "norm_label": "str"
@@ -1516,7 +1696,7 @@
       "label": "_row()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L57",
+      "source_location": "L60",
       "id": "services_context_store_row",
       "community": 75,
       "norm_label": "_row()"
@@ -1525,7 +1705,7 @@
       "label": "_best()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L68",
+      "source_location": "L71",
       "id": "services_context_store_best",
       "community": 75,
       "norm_label": "_best()"
@@ -1534,7 +1714,7 @@
       "label": "get_active_repo()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L79",
+      "source_location": "L82",
       "id": "services_context_store_get_active_repo",
       "community": 75,
       "norm_label": "get_active_repo()"
@@ -1543,7 +1723,7 @@
       "label": "resolve_repo()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L86",
+      "source_location": "L89",
       "id": "services_context_store_resolve_repo",
       "community": 75,
       "norm_label": "resolve_repo()"
@@ -1552,7 +1732,7 @@
       "label": "get_technical()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L93",
+      "source_location": "L96",
       "id": "services_context_store_get_technical",
       "community": 75,
       "norm_label": "get_technical()"
@@ -1561,7 +1741,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L93",
+      "source_location": "L96",
       "id": "server_services_context_store_py_bool",
       "community": 75,
       "norm_label": "bool"
@@ -1570,7 +1750,7 @@
       "label": "_upsert()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L98",
+      "source_location": "L101",
       "id": "services_context_store_upsert",
       "community": 75,
       "norm_label": "_upsert()"
@@ -1579,7 +1759,7 @@
       "label": "set_active_repo()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L119",
+      "source_location": "L122",
       "id": "services_context_store_set_active_repo",
       "community": 75,
       "norm_label": "set_active_repo()"
@@ -1588,26 +1768,26 @@
       "label": "set_mode()",
       "file_type": "code",
       "source_file": "server/services/context_store.py",
-      "source_location": "L123",
+      "source_location": "L126",
       "id": "services_context_store_set_mode",
       "community": 75,
       "norm_label": "set_mode()"
     },
     {
-      "label": "Production-grade conversation context \u2014 SQLite backed.  Scopes state to Slack's",
+      "label": "Production-grade conversation context \u2014 SQLite backed.  Scopes state to Slack'",
       "file_type": "rationale",
       "source_file": "server/services/context_store.py",
       "source_location": "L1",
       "id": "services_context_store_rationale_1",
       "community": 75,
-      "norm_label": "production-grade conversation context \u2014 sqlite backed.  scopes state to slack's"
+      "norm_label": "production-grade conversation context \u2014 sqlite backed.  scopes state to slack'"
     },
     {
       "label": "Exact (incl. thread) \u2192 same user at channel level (thread='') \u2192 None.",
       "file_type": "rationale",
       "source_file": "server/services/context_store.py",
-      "source_location": "L69",
-      "id": "services_context_store_rationale_69",
+      "source_location": "L72",
+      "id": "services_context_store_rationale_72",
       "community": 75,
       "norm_label": "exact (incl. thread) \u2192 same user at channel level (thread='') \u2192 none."
     },
@@ -1617,16 +1797,16 @@
       "source_file": "server/services/create_pr.py",
       "source_location": "L1",
       "id": "server_services_create_pr_py",
-      "community": 1,
+      "community": 101,
       "norm_label": "create_pr.py"
     },
     {
       "label": "NoChangesError",
       "file_type": "code",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L8",
+      "source_location": "L10",
       "id": "services_create_pr_nochangeserror",
-      "community": 1,
+      "community": 101,
       "norm_label": "nochangeserror"
     },
     {
@@ -1635,53 +1815,53 @@
       "source_file": "",
       "source_location": "",
       "id": "runtimeerror",
-      "community": 1,
+      "community": 2,
       "norm_label": "runtimeerror"
     },
     {
       "label": "open_pr()",
       "file_type": "code",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L12",
+      "source_location": "L14",
       "id": "services_create_pr_open_pr",
-      "community": 1,
+      "community": 101,
       "norm_label": "open_pr()"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L12",
+      "source_location": "L14",
       "id": "server_services_create_pr_py_str",
-      "community": 1,
+      "community": 101,
       "norm_label": "str"
     },
     {
       "label": "create_pull_request()",
       "file_type": "code",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L58",
+      "source_location": "L60",
       "id": "services_create_pr_create_pull_request",
-      "community": 1,
+      "community": 101,
       "norm_label": "create_pull_request()"
     },
     {
       "label": "Raised when there's nothing to commit (proposed changes were a no-op).",
       "file_type": "rationale",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L9",
-      "id": "services_create_pr_rationale_9",
-      "community": 1,
+      "source_location": "L11",
+      "id": "services_create_pr_rationale_11",
+      "community": 101,
       "norm_label": "raised when there's nothing to commit (proposed changes were a no-op)."
     },
     {
-      "label": "Reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft PR. Returns     (pr_url,",
+      "label": "Reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft PR. Returns     (pr_url",
       "file_type": "rationale",
       "source_file": "server/services/create_pr.py",
-      "source_location": "L24",
-      "id": "services_create_pr_rationale_24",
-      "community": 1,
-      "norm_label": "reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft pr. returns     (pr_url,"
+      "source_location": "L26",
+      "id": "services_create_pr_rationale_26",
+      "community": 101,
+      "norm_label": "reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft pr. returns     (pr_url"
     },
     {
       "label": "fix_issue.py",
@@ -1696,7 +1876,7 @@
       "label": "_safe_join()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L59",
+      "source_location": "L61",
       "id": "services_fix_issue_safe_join",
       "community": 1,
       "norm_label": "_safe_join()"
@@ -1705,7 +1885,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L59",
+      "source_location": "L61",
       "id": "server_services_fix_issue_py_str",
       "community": 1,
       "norm_label": "str"
@@ -1714,7 +1894,7 @@
       "label": "_read_clone_file()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L69",
+      "source_location": "L71",
       "id": "services_fix_issue_read_clone_file",
       "community": 1,
       "norm_label": "_read_clone_file()"
@@ -1723,7 +1903,7 @@
       "label": "int",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L69",
+      "source_location": "L71",
       "id": "server_services_fix_issue_py_int",
       "community": 1,
       "norm_label": "int"
@@ -1732,7 +1912,7 @@
       "label": "_pick_files()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L80",
+      "source_location": "L82",
       "id": "services_fix_issue_pick_files",
       "community": 1,
       "norm_label": "_pick_files()"
@@ -1741,7 +1921,7 @@
       "label": "_image_blocks()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L95",
+      "source_location": "L97",
       "id": "services_fix_issue_image_blocks",
       "community": 1,
       "norm_label": "_image_blocks()"
@@ -1750,7 +1930,7 @@
       "label": "_parse_changes()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L111",
+      "source_location": "L113",
       "id": "services_fix_issue_parse_changes",
       "community": 1,
       "norm_label": "_parse_changes()"
@@ -1759,7 +1939,7 @@
       "label": "_emit()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L132",
+      "source_location": "L134",
       "id": "services_fix_issue_emit",
       "community": 1,
       "norm_label": "_emit()"
@@ -1768,26 +1948,26 @@
       "label": "fix_issue()",
       "file_type": "code",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L142",
+      "source_location": "L144",
       "id": "services_fix_issue_fix_issue",
       "community": 1,
       "norm_label": "fix_issue()"
     },
     {
-      "label": "Autonomous issue \u2192 PR agent.  Given a GitHub issue, this:   1. reads the issue (",
+      "label": "Autonomous issue \u2192 PR agent.  Given a GitHub issue, this:   1. reads the issu",
       "file_type": "rationale",
       "source_file": "server/services/fix_issue.py",
       "source_location": "L1",
       "id": "services_fix_issue_rationale_1",
       "community": 1,
-      "norm_label": "autonomous issue \u2192 pr agent.  given a github issue, this:   1. reads the issue ("
+      "norm_label": "autonomous issue \u2192 pr agent.  given a github issue, this:   1. reads the issu"
     },
     {
       "label": "Join rel under repo_path, rejecting traversal/absolute paths.",
       "file_type": "rationale",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L60",
-      "id": "services_fix_issue_rationale_60",
+      "source_location": "L62",
+      "id": "services_fix_issue_rationale_62",
       "community": 1,
       "norm_label": "join rel under repo_path, rejecting traversal/absolute paths."
     },
@@ -1795,8 +1975,8 @@
       "label": "Parse the delimiter format (robust for code). Falls back to JSON if present.",
       "file_type": "rationale",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L112",
-      "id": "services_fix_issue_rationale_112",
+      "source_location": "L114",
+      "id": "services_fix_issue_rationale_114",
       "community": 1,
       "norm_label": "parse the delimiter format (robust for code). falls back to json if present."
     },
@@ -1804,8 +1984,8 @@
       "label": "Push a real progress event to the caller (drives the live Slack loader).",
       "file_type": "rationale",
       "source_file": "server/services/fix_issue.py",
-      "source_location": "L133",
-      "id": "services_fix_issue_rationale_133",
+      "source_location": "L135",
+      "id": "services_fix_issue_rationale_135",
       "community": 1,
       "norm_label": "push a real progress event to the caller (drives the live slack loader)."
     },
@@ -1894,7 +2074,7 @@
       "label": "_graph_dir()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L13",
+      "source_location": "L15",
       "id": "services_graph_service_graph_dir",
       "community": 95,
       "norm_label": "_graph_dir()"
@@ -1903,7 +2083,7 @@
       "label": "str",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L13",
+      "source_location": "L15",
       "id": "server_services_graph_service_py_str",
       "community": 95,
       "norm_label": "str"
@@ -1912,7 +2092,7 @@
       "label": "Path",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L13",
+      "source_location": "L15",
       "id": "path",
       "community": 95,
       "norm_label": "path"
@@ -1921,7 +2101,7 @@
       "label": "graph_exists()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "services_graph_service_graph_exists",
       "community": 95,
       "norm_label": "graph_exists()"
@@ -1930,7 +2110,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "server_services_graph_service_py_bool",
       "community": 95,
       "norm_label": "bool"
@@ -1939,7 +2119,7 @@
       "label": "get_graph_meta()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "id": "services_graph_service_get_graph_meta",
       "community": 95,
       "norm_label": "get_graph_meta()"
@@ -1948,7 +2128,7 @@
       "label": "_build_from_path()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L32",
+      "source_location": "L34",
       "id": "services_graph_service_build_from_path",
       "community": 95,
       "norm_label": "_build_from_path()"
@@ -1957,7 +2137,7 @@
       "label": "build_graph()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L95",
+      "source_location": "L97",
       "id": "services_graph_service_build_graph",
       "community": 95,
       "norm_label": "build_graph()"
@@ -1966,7 +2146,7 @@
       "label": "relevant_files()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L123",
+      "source_location": "L125",
       "id": "services_graph_service_relevant_files",
       "community": 95,
       "norm_label": "relevant_files()"
@@ -1975,7 +2155,7 @@
       "label": "int",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L123",
+      "source_location": "L125",
       "id": "server_services_graph_service_py_int",
       "community": 95,
       "norm_label": "int"
@@ -1984,7 +2164,7 @@
       "label": "query_graph()",
       "file_type": "code",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L174",
+      "source_location": "L176",
       "id": "services_graph_service_query_graph",
       "community": 95,
       "norm_label": "query_graph()"
@@ -1993,35 +2173,35 @@
       "label": "Run the graphify AST pipeline on an already-checked-out repo and persist it.",
       "file_type": "rationale",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L33",
-      "id": "services_graph_service_rationale_33",
+      "source_location": "L35",
+      "id": "services_graph_service_rationale_35",
       "community": 95,
       "norm_label": "run the graphify ast pipeline on an already-checked-out repo and persist it."
     },
     {
-      "label": "Build/refresh the knowledge graph for a repo.      If `repo_path` is given, buil",
+      "label": "Build/refresh the knowledge graph for a repo.      If `repo_path` is given, bu",
       "file_type": "rationale",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L96",
-      "id": "services_graph_service_rationale_96",
+      "source_location": "L98",
+      "id": "services_graph_service_rationale_98",
       "community": 95,
-      "norm_label": "build/refresh the knowledge graph for a repo.      if `repo_path` is given, buil"
+      "norm_label": "build/refresh the knowledge graph for a repo.      if `repo_path` is given, bu"
     },
     {
-      "label": "Source files of the graph nodes most relevant to the question.      Used to pull",
+      "label": "Source files of the graph nodes most relevant to the question.      Used to pu",
       "file_type": "rationale",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L124",
-      "id": "services_graph_service_rationale_124",
+      "source_location": "L126",
+      "id": "services_graph_service_rationale_126",
       "community": 95,
-      "norm_label": "source files of the graph nodes most relevant to the question.      used to pull"
+      "norm_label": "source files of the graph nodes most relevant to the question.      used to pu"
     },
     {
       "label": "BFS from question-relevant nodes. Returns a compact context string for Claude.",
       "file_type": "rationale",
       "source_file": "server/services/graph_service.py",
-      "source_location": "L175",
-      "id": "services_graph_service_rationale_175",
+      "source_location": "L177",
+      "id": "services_graph_service_rationale_177",
       "community": 95,
       "norm_label": "bfs from question-relevant nodes. returns a compact context string for claude."
     },
@@ -2031,7 +2211,7 @@
       "source_file": "server/services/validate_fix.py",
       "source_location": "L1",
       "id": "server_services_validate_fix_py",
-      "community": 1,
+      "community": 107,
       "norm_label": "validate_fix.py"
     },
     {
@@ -2040,7 +2220,7 @@
       "source_file": "server/services/validate_fix.py",
       "source_location": "L5",
       "id": "services_validate_fix_validate_fix",
-      "community": 1,
+      "community": 107,
       "norm_label": "validate_fix()"
     },
     {
@@ -2049,7 +2229,7 @@
       "source_file": "server/services/validate_fix.py",
       "source_location": "L5",
       "id": "server_services_validate_fix_py_str",
-      "community": 1,
+      "community": 107,
       "norm_label": "str"
     },
     {
@@ -2058,7 +2238,7 @@
       "source_file": "server/services/validate_fix.py",
       "source_location": "L5",
       "id": "server_services_validate_fix_py_bool",
-      "community": 1,
+      "community": 107,
       "norm_label": "bool"
     },
     {
@@ -2112,25 +2292,25 @@
       "source_file": "server/utils/github.py",
       "source_location": "L1",
       "id": "server_utils_github_py",
-      "community": 1,
+      "community": 101,
       "norm_label": "github.py"
     },
     {
       "label": "create_github_pr()",
       "file_type": "code",
       "source_file": "server/utils/github.py",
-      "source_location": "L5",
+      "source_location": "L8",
       "id": "utils_github_create_github_pr",
-      "community": 1,
+      "community": 101,
       "norm_label": "create_github_pr()"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "server/utils/github.py",
-      "source_location": "L5",
+      "source_location": "L8",
       "id": "server_utils_github_py_str",
-      "community": 1,
+      "community": 101,
       "norm_label": "str"
     },
     {
@@ -2211,79 +2391,79 @@
       "source_file": "server/utils/shell.py",
       "source_location": "L1",
       "id": "server_utils_shell_py",
-      "community": 1,
+      "community": 100,
       "norm_label": "shell.py"
     },
     {
       "label": "_redact()",
       "file_type": "code",
       "source_file": "server/utils/shell.py",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "utils_shell_redact",
-      "community": 1,
+      "community": 100,
       "norm_label": "_redact()"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "server/utils/shell.py",
-      "source_location": "L9",
+      "source_location": "L12",
       "id": "server_utils_shell_py_str",
-      "community": 1,
+      "community": 100,
       "norm_label": "str"
     },
     {
       "label": "run_cmd()",
       "file_type": "code",
       "source_file": "server/utils/shell.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "id": "utils_shell_run_cmd",
-      "community": 1,
+      "community": 100,
       "norm_label": "run_cmd()"
     },
     {
       "label": "run_shell()",
       "file_type": "code",
       "source_file": "server/utils/shell.py",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "utils_shell_run_shell",
-      "community": 1,
+      "community": 107,
       "norm_label": "run_shell()"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "server/utils/shell.py",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "server_utils_shell_py_bool",
-      "community": 1,
+      "community": 107,
       "norm_label": "bool"
     },
     {
       "label": "Replace token in HTTPS URLs so it never appears in logs.",
       "file_type": "rationale",
       "source_file": "server/utils/shell.py",
-      "source_location": "L10",
-      "id": "utils_shell_rationale_10",
-      "community": 1,
+      "source_location": "L13",
+      "id": "utils_shell_rationale_13",
+      "community": 100,
       "norm_label": "replace token in https urls so it never appears in logs."
     },
     {
       "label": "Run a command in a thread pool (Windows-safe, works on SelectorEventLoop).",
       "file_type": "rationale",
       "source_file": "server/utils/shell.py",
-      "source_location": "L15",
-      "id": "utils_shell_rationale_15",
-      "community": 1,
+      "source_location": "L18",
+      "id": "utils_shell_rationale_18",
+      "community": 100,
       "norm_label": "run a command in a thread pool (windows-safe, works on selectoreventloop)."
     },
     {
       "label": "Run a shell command. Returns True on success, False on failure (non-blocking).",
       "file_type": "rationale",
       "source_file": "server/utils/shell.py",
-      "source_location": "L39",
-      "id": "utils_shell_rationale_39",
-      "community": 1,
+      "source_location": "L42",
+      "id": "utils_shell_rationale_42",
+      "community": 107,
       "norm_label": "run a shell command. returns true on success, false on failure (non-blocking)."
     },
     {
@@ -2467,28 +2647,37 @@
       "norm_label": "runfix()"
     },
     {
+      "label": "runAction()",
+      "file_type": "code",
+      "source_file": "slack-bridge/index.js",
+      "source_location": "L286",
+      "id": "slack_bridge_index_runaction",
+      "community": 5,
+      "norm_label": "runaction()"
+    },
+    {
       "label": "imagesFromData()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L288",
+      "source_location": "L357",
       "id": "slack_bridge_index_imagesfromdata",
       "community": 5,
       "norm_label": "imagesfromdata()"
     },
     {
-      "label": "fixButtonFromData()",
+      "label": "actionsFromData()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L295",
-      "id": "slack_bridge_index_fixbuttonfromdata",
+      "source_location": "L366",
+      "id": "slack_bridge_index_actionsfromdata",
       "community": 5,
-      "norm_label": "fixbuttonfromdata()"
+      "norm_label": "actionsfromdata()"
     },
     {
       "label": "formatForSlack()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L314",
+      "source_location": "L404",
       "id": "slack_bridge_index_formatforslack",
       "community": 5,
       "norm_label": "formatforslack()"
@@ -2497,7 +2686,7 @@
       "label": "formatPRList()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L333",
+      "source_location": "L423",
       "id": "slack_bridge_index_formatprlist",
       "community": 5,
       "norm_label": "formatprlist()"
@@ -2506,7 +2695,7 @@
       "label": "formatIssueList()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L341",
+      "source_location": "L431",
       "id": "slack_bridge_index_formatissuelist",
       "community": 5,
       "norm_label": "formatissuelist()"
@@ -2515,7 +2704,7 @@
       "label": "formatCommitList()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L349",
+      "source_location": "L439",
       "id": "slack_bridge_index_formatcommitlist",
       "community": 5,
       "norm_label": "formatcommitlist()"
@@ -2524,7 +2713,7 @@
       "label": "formatPRDetail()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L357",
+      "source_location": "L447",
       "id": "slack_bridge_index_formatprdetail",
       "community": 5,
       "norm_label": "formatprdetail()"
@@ -2533,7 +2722,7 @@
       "label": "formatCommitDetail()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L365",
+      "source_location": "L459",
       "id": "slack_bridge_index_formatcommitdetail",
       "community": 5,
       "norm_label": "formatcommitdetail()"
@@ -2542,7 +2731,7 @@
       "label": "formatDirectory()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L383",
+      "source_location": "L477",
       "id": "slack_bridge_index_formatdirectory",
       "community": 5,
       "norm_label": "formatdirectory()"
@@ -2551,7 +2740,7 @@
       "label": "formatFileContent()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L398",
+      "source_location": "L492",
       "id": "slack_bridge_index_formatfilecontent",
       "community": 5,
       "norm_label": "formatfilecontent()"
@@ -2560,7 +2749,7 @@
       "label": "formatFileSuggestions()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L409",
+      "source_location": "L503",
       "id": "slack_bridge_index_formatfilesuggestions",
       "community": 5,
       "norm_label": "formatfilesuggestions()"
@@ -2569,7 +2758,7 @@
       "label": "formatRepoInfo()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L422",
+      "source_location": "L516",
       "id": "slack_bridge_index_formatrepoinfo",
       "community": 5,
       "norm_label": "formatrepoinfo()"
@@ -2578,7 +2767,7 @@
       "label": "formatIssueDetail()",
       "file_type": "code",
       "source_file": "slack-bridge/index.js",
-      "source_location": "L445",
+      "source_location": "L539",
       "id": "slack_bridge_index_formatissuedetail",
       "community": 5,
       "norm_label": "formatissuedetail()"
@@ -6328,11 +6517,317 @@
       "norm_label": "code:block35 (user sends whatsapp message)"
     },
     {
+      "label": "All repos the token can access, most-recently-updated first (paginated).      No",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L36",
+      "community": 103,
+      "norm_label": "all repos the token can access, most-recently-updated first (paginated).      no",
+      "id": "adapters_github_adapter_rationale_36"
+    },
+    {
+      "label": "Image URLs from markdown ![](url) AND HTML <img src=\"url\"> in issue/PR bodies.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L111",
+      "community": 6,
+      "norm_label": "image urls from markdown ![](url) and html <img src=\"url\"> in issue/pr bodies.",
+      "id": "adapters_github_adapter_rationale_111"
+    },
+    {
+      "label": "Remove image markup so the displayed text doesn't show raw <img> tags / md.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L124",
+      "community": 6,
+      "norm_label": "remove image markup so the displayed text doesn't show raw <img> tags / md.",
+      "id": "adapters_github_adapter_rationale_124"
+    },
+    {
+      "label": "Download image bytes (+ mime) \u2014 for passing screenshots to Claude vision.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L133",
+      "community": 108,
+      "norm_label": "download image bytes (+ mime) \u2014 for passing screenshots to claude vision.",
+      "id": "adapters_github_adapter_rationale_133"
+    },
+    {
+      "label": "Turn an auth-gated GitHub image URL into a publicly-fetchable one.      `github.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L149",
+      "community": 108,
+      "norm_label": "turn an auth-gated github image url into a publicly-fetchable one.      `github.",
+      "id": "adapters_github_adapter_rationale_149"
+    },
+    {
+      "label": "Search the ENTIRE repo tree recursively for files/folders matching a term.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L213",
+      "community": 97,
+      "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
+      "id": "adapters_github_adapter_rationale_213"
+    },
+    {
+      "label": "Returns directory listing or file content from the repo tree.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L242",
+      "community": 97,
+      "norm_label": "returns directory listing or file content from the repo tree.",
+      "id": "adapters_github_adapter_rationale_242"
+    },
+    {
+      "label": "Search file CONTENTS (GitHub code search) \u2014 finds files mentioning the terms,",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L289",
+      "community": 102,
+      "norm_label": "search file contents (github code search) \u2014 finds files mentioning the terms,",
+      "id": "adapters_github_adapter_rationale_289"
+    },
+    {
+      "label": "Full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L308",
+      "community": 102,
+      "norm_label": "full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)",
+      "id": "adapters_github_adapter_rationale_308"
+    },
+    {
+      "label": "Single API call \u2192 compact 2-level repo structure string for Claude context.",
+      "file_type": "rationale",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L323",
+      "community": 106,
+      "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
+      "id": "adapters_github_adapter_rationale_323"
+    },
+    {
+      "label": "Return list of {from, text, message_id} for each text message in a webhook paylo",
+      "file_type": "rationale",
+      "source_file": "server/adapters/whatsapp_adapter.py",
+      "source_location": "L34",
+      "community": 75,
+      "norm_label": "return list of {from, text, message_id} for each text message in a webhook paylo",
+      "id": "adapters_whatsapp_adapter_rationale_34"
+    },
+    {
+      "label": "Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall",
+      "file_type": "rationale",
+      "source_file": "server/agents/intent_parser.py",
+      "source_location": "L257",
+      "community": 86,
+      "norm_label": "classify intent using openai gpt-4o-mini.      `api_key` is the openai key; fall",
+      "id": "agents_intent_parser_rationale_257"
+    },
+    {
+      "label": "Returns (plain_text_fallback, structured_data) tuple.",
+      "file_type": "rationale",
+      "source_file": "server/agents/status_agent.py",
+      "source_location": "L10",
+      "community": 6,
+      "norm_label": "returns (plain_text_fallback, structured_data) tuple.",
+      "id": "agents_status_agent_rationale_10"
+    },
+    {
+      "label": "Most recent id for a specific kind ('issues'|'prs'), from a list (its     *#N* m",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L41",
+      "community": 105,
+      "norm_label": "most recent id for a specific kind ('issues'|'prs'), from a list (its     *#n* m",
+      "id": "services_assistant_rationale_41"
+    },
+    {
+      "label": "Return 1-based position, -1 for 'last', or None.",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L63",
+      "community": 105,
+      "norm_label": "return 1-based position, -1 for 'last', or none.",
+      "id": "services_assistant_rationale_63"
+    },
+    {
+      "label": "What the user explicitly asked for: 'prs' | 'commits' | 'issues' | None.",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L74",
+      "community": 96,
+      "norm_label": "what the user explicitly asked for: 'prs' | 'commits' | 'issues' | none.",
+      "id": "services_assistant_rationale_74"
+    },
+    {
+      "label": "Most recent LIST message (matched by its header) \u2192 (kind, [ids in order]).",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L86",
+      "community": 96,
+      "norm_label": "most recent list message (matched by its header) \u2192 (kind, [ids in order]).",
+      "id": "services_assistant_rationale_86"
+    },
+    {
+      "label": "If the user says 'the Nth one' / 'the last one', override the entity id     dete",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L116",
+      "community": 96,
+      "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     dete",
+      "id": "services_assistant_rationale_116"
+    },
+    {
+      "label": "Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)     r",
+      "file_type": "rationale",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L158",
+      "community": 98,
+      "norm_label": "returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)     r",
+      "id": "services_assistant_rationale_158"
+    },
+    {
+      "label": "Validate + persist the active repo for this context. Shared by the !repo     com",
+      "file_type": "rationale",
+      "source_file": "server/services/commands.py",
+      "source_location": "L39",
+      "community": 75,
+      "norm_label": "validate + persist the active repo for this context. shared by the !repo     com",
+      "id": "services_commands_rationale_39"
+    },
+    {
+      "label": "Exact (incl. thread) \u2192 same user at channel level (thread='') \u2192 None.",
+      "file_type": "rationale",
+      "source_file": "server/services/context_store.py",
+      "source_location": "L69",
+      "community": 75,
+      "norm_label": "exact (incl. thread) \u2192 same user at channel level (thread='') \u2192 none.",
+      "id": "services_context_store_rationale_69"
+    },
+    {
+      "label": "Raised when there's nothing to commit (proposed changes were a no-op).",
+      "file_type": "rationale",
+      "source_file": "server/services/create_pr.py",
+      "source_location": "L9",
+      "community": 101,
+      "norm_label": "raised when there's nothing to commit (proposed changes were a no-op).",
+      "id": "services_create_pr_rationale_9"
+    },
+    {
+      "label": "Reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft PR. Returns     (pr_url,",
+      "file_type": "rationale",
+      "source_file": "server/services/create_pr.py",
+      "source_location": "L24",
+      "community": 101,
+      "norm_label": "reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft pr. returns     (pr_url,",
+      "id": "services_create_pr_rationale_24"
+    },
+    {
+      "label": "Join rel under repo_path, rejecting traversal/absolute paths.",
+      "file_type": "rationale",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L60",
+      "community": 1,
+      "norm_label": "join rel under repo_path, rejecting traversal/absolute paths.",
+      "id": "services_fix_issue_rationale_60"
+    },
+    {
+      "label": "Parse the delimiter format (robust for code). Falls back to JSON if present.",
+      "file_type": "rationale",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L112",
+      "community": 1,
+      "norm_label": "parse the delimiter format (robust for code). falls back to json if present.",
+      "id": "services_fix_issue_rationale_112"
+    },
+    {
+      "label": "Push a real progress event to the caller (drives the live Slack loader).",
+      "file_type": "rationale",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L133",
+      "community": 1,
+      "norm_label": "push a real progress event to the caller (drives the live slack loader).",
+      "id": "services_fix_issue_rationale_133"
+    },
+    {
+      "label": "Run the graphify AST pipeline on an already-checked-out repo and persist it.",
+      "file_type": "rationale",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L33",
+      "community": 95,
+      "norm_label": "run the graphify ast pipeline on an already-checked-out repo and persist it.",
+      "id": "services_graph_service_rationale_33"
+    },
+    {
+      "label": "Build/refresh the knowledge graph for a repo.      If `repo_path` is given, buil",
+      "file_type": "rationale",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L96",
+      "community": 95,
+      "norm_label": "build/refresh the knowledge graph for a repo.      if `repo_path` is given, buil",
+      "id": "services_graph_service_rationale_96"
+    },
+    {
+      "label": "Source files of the graph nodes most relevant to the question.      Used to pull",
+      "file_type": "rationale",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L124",
+      "community": 95,
+      "norm_label": "source files of the graph nodes most relevant to the question.      used to pull",
+      "id": "services_graph_service_rationale_124"
+    },
+    {
+      "label": "BFS from question-relevant nodes. Returns a compact context string for Claude.",
+      "file_type": "rationale",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L175",
+      "community": 95,
+      "norm_label": "bfs from question-relevant nodes. returns a compact context string for claude.",
+      "id": "services_graph_service_rationale_175"
+    },
+    {
+      "label": "Replace token in HTTPS URLs so it never appears in logs.",
+      "file_type": "rationale",
+      "source_file": "server/utils/shell.py",
+      "source_location": "L10",
+      "community": 100,
+      "norm_label": "replace token in https urls so it never appears in logs.",
+      "id": "utils_shell_rationale_10"
+    },
+    {
+      "label": "Run a command in a thread pool (Windows-safe, works on SelectorEventLoop).",
+      "file_type": "rationale",
+      "source_file": "server/utils/shell.py",
+      "source_location": "L15",
+      "community": 100,
+      "norm_label": "run a command in a thread pool (windows-safe, works on selectoreventloop).",
+      "id": "utils_shell_rationale_15"
+    },
+    {
+      "label": "Run a shell command. Returns True on success, False on failure (non-blocking).",
+      "file_type": "rationale",
+      "source_file": "server/utils/shell.py",
+      "source_location": "L39",
+      "community": 107,
+      "norm_label": "run a shell command. returns true on success, false on failure (non-blocking).",
+      "id": "utils_shell_rationale_39"
+    },
+    {
+      "label": "fixButtonFromData()",
+      "file_type": "code",
+      "source_file": "slack-bridge/index.js",
+      "source_location": "L295",
+      "community": 5,
+      "norm_label": "fixbuttonfromdata()",
+      "id": "slack_bridge_index_fixbuttonfromdata"
+    },
+    {
       "label": "Returns {reply, intent, data, cost_inr, graph_used}.",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L157",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_157"
     },
@@ -6350,7 +6845,7 @@
       "file_type": "code",
       "source_file": "server/services/assistant.py",
       "source_location": "L40",
-      "community": 86,
+      "community": 105,
       "norm_label": "_last_issue_number()",
       "id": "services_assistant_last_issue_number"
     },
@@ -6359,7 +6854,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L54",
-      "community": 86,
+      "community": 105,
       "norm_label": "return 1-based position, -1 for 'last', or none.",
       "id": "services_assistant_rationale_54"
     },
@@ -6368,25 +6863,16 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L65",
-      "community": 86,
+      "community": 96,
       "norm_label": "what the user explicitly asked for: 'prs' | 'commits' | 'issues' | none.",
       "id": "services_assistant_rationale_65"
-    },
-    {
-      "label": "Most recent LIST message (matched by its header) \u2192 (kind, [ids in order]).",
-      "file_type": "rationale",
-      "source_file": "server/services/assistant.py",
-      "source_location": "L77",
-      "community": 86,
-      "norm_label": "most recent list message (matched by its header) \u2192 (kind, [ids in order]).",
-      "id": "services_assistant_rationale_77"
     },
     {
       "label": "If the user says 'the Nth one' / 'the last one', override the entity id     dete",
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L107",
-      "community": 86,
+      "community": 96,
       "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     dete",
       "id": "services_assistant_rationale_107"
     },
@@ -6395,7 +6881,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L148",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_148"
     },
@@ -6404,7 +6890,7 @@
       "file_type": "code",
       "source_file": "server/services/assistant.py",
       "source_location": "L64",
-      "community": 86,
+      "community": 96,
       "norm_label": "_ids_from_history()",
       "id": "services_assistant_ids_from_history"
     },
@@ -6413,7 +6899,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L80",
-      "community": 86,
+      "community": 96,
       "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     dete",
       "id": "services_assistant_rationale_80"
     },
@@ -6422,7 +6908,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L121",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_121"
     },
@@ -6467,7 +6953,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L52",
-      "community": 86,
+      "community": 96,
       "norm_label": "most recent list we posted \u2192 ('commits'|'prs'|'issues', [ids in order]).",
       "id": "services_assistant_rationale_52"
     },
@@ -6476,7 +6962,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L67",
-      "community": 86,
+      "community": 96,
       "norm_label": "if the user says 'the nth one' / 'the last one', override the entity id     dete",
       "id": "services_assistant_rationale_67"
     },
@@ -6485,7 +6971,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L108",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_108"
     },
@@ -6512,7 +6998,7 @@
       "file_type": "rationale",
       "source_file": "server/services/create_pr.py",
       "source_location": "L23",
-      "community": 1,
+      "community": 101,
       "norm_label": "reusable: branch \u2192 stage \u2192 commit \u2192 push \u2192 open a draft pr for whatever     chan",
       "id": "services_create_pr_rationale_23"
     },
@@ -6548,7 +7034,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L194",
-      "community": 6,
+      "community": 97,
       "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
       "id": "adapters_github_adapter_rationale_194"
     },
@@ -6557,7 +7043,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L223",
-      "community": 6,
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree.",
       "id": "adapters_github_adapter_rationale_223"
     },
@@ -6566,7 +7052,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L270",
-      "community": 6,
+      "community": 102,
       "norm_label": "search file contents (github code search) \u2014 finds files mentioning the terms,",
       "id": "adapters_github_adapter_rationale_270"
     },
@@ -6575,7 +7061,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L304",
-      "community": 6,
+      "community": 106,
       "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
       "id": "adapters_github_adapter_rationale_304"
     },
@@ -6584,7 +7070,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L50",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_50"
     },
@@ -6598,20 +7084,11 @@
       "id": "adapters_github_adapter_fetch_image_b64"
     },
     {
-      "label": "Search the ENTIRE repo tree recursively for files/folders matching a term.",
-      "file_type": "rationale",
-      "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L197",
-      "community": 6,
-      "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
-      "id": "adapters_github_adapter_rationale_197"
-    },
-    {
       "label": "Returns directory listing or file content from the repo tree.",
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L226",
-      "community": 6,
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree.",
       "id": "adapters_github_adapter_rationale_226"
     },
@@ -6620,7 +7097,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L273",
-      "community": 6,
+      "community": 102,
       "norm_label": "search file contents (github code search) \u2014 finds files mentioning the terms,",
       "id": "adapters_github_adapter_rationale_273"
     },
@@ -6629,7 +7106,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L292",
-      "community": 6,
+      "community": 102,
       "norm_label": "full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)",
       "id": "adapters_github_adapter_rationale_292"
     },
@@ -6638,7 +7115,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L307",
-      "community": 6,
+      "community": 106,
       "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
       "id": "adapters_github_adapter_rationale_307"
     },
@@ -6656,7 +7133,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L151",
-      "community": 6,
+      "community": 97,
       "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
       "id": "adapters_github_adapter_rationale_151"
     },
@@ -6665,7 +7142,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L180",
-      "community": 6,
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree.",
       "id": "adapters_github_adapter_rationale_180"
     },
@@ -6674,7 +7151,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L227",
-      "community": 6,
+      "community": 102,
       "norm_label": "search file contents (github code search) \u2014 finds files mentioning the terms,",
       "id": "adapters_github_adapter_rationale_227"
     },
@@ -6683,18 +7160,9 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L246",
-      "community": 6,
+      "community": 102,
       "norm_label": "full(ish) source of a single file \u2014 for deep code analysis (not truncated to 2k)",
       "id": "adapters_github_adapter_rationale_246"
-    },
-    {
-      "label": "Single API call \u2192 compact 2-level repo structure string for Claude context.",
-      "file_type": "rationale",
-      "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L261",
-      "community": 6,
-      "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
-      "id": "adapters_github_adapter_rationale_261"
     },
     {
       "label": "Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall",
@@ -6764,7 +7232,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L38",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_38"
     },
@@ -6782,7 +7250,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L36",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_36"
     },
@@ -6800,7 +7268,7 @@
       "file_type": "rationale",
       "source_file": "server/services/assistant.py",
       "source_location": "L34",
-      "community": 86,
+      "community": 98,
       "norm_label": "returns {reply, intent, data, cost_inr, graph_used}.",
       "id": "services_assistant_rationale_34"
     },
@@ -6809,7 +7277,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L136",
-      "community": 6,
+      "community": 97,
       "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
       "id": "adapters_github_adapter_rationale_136"
     },
@@ -6818,7 +7286,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L165",
-      "community": 6,
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree.",
       "id": "adapters_github_adapter_rationale_165"
     },
@@ -6827,7 +7295,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L212",
-      "community": 6,
+      "community": 106,
       "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
       "id": "adapters_github_adapter_rationale_212"
     },
@@ -6899,7 +7367,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L110",
-      "community": 6,
+      "community": 97,
       "norm_label": "search the entire repo tree recursively for files/folders matching a term.",
       "id": "adapters_github_adapter_rationale_110"
     },
@@ -6908,7 +7376,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L139",
-      "community": 6,
+      "community": 97,
       "norm_label": "returns directory listing or file content from the repo tree.",
       "id": "adapters_github_adapter_rationale_139"
     },
@@ -6917,7 +7385,7 @@
       "file_type": "rationale",
       "source_file": "server/adapters/github_adapter.py",
       "source_location": "L186",
-      "community": 6,
+      "community": 106,
       "norm_label": "single api call \u2192 compact 2-level repo structure string for claude context.",
       "id": "adapters_github_adapter_rationale_186"
     },
@@ -7476,6 +7944,36 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "server_adapters_github_adapter_py",
+      "target": "adapters_github_adapter_close_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L499",
+      "weight": 1.0,
+      "source": "server_adapters_github_adapter_py",
+      "target": "adapters_github_adapter_close_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "server_adapters_github_adapter_py",
+      "target": "adapters_github_adapter_delete_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
       "source_location": "L69",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7616,6 +8114,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "server_adapters_github_adapter_py",
+      "target": "adapters_github_adapter_merge_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
       "source_location": "L53",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7671,6 +8179,38 @@
       "confidence_score": 1.0,
       "source": "server_adapters_github_adapter_py",
       "target": "adapters_github_adapter_throttled_get"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "server_adapters_github_adapter_py",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L514",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "adapters_github_adapter_throttled_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L462",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_delete_issue",
+      "target": "adapters_github_adapter_throttled_get",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7839,6 +8379,39 @@
     },
     {
       "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_issue",
+      "target": "server_adapters_github_adapter_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L499",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "server_adapters_github_adapter_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_delete_issue",
+      "target": "server_adapters_github_adapter_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "server/adapters/github_adapter.py",
@@ -7996,6 +8569,17 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_merge_pr",
+      "target": "server_adapters_github_adapter_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
       "source_location": "L53",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8051,6 +8635,82 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_throttled_request",
+      "target": "server_adapters_github_adapter_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L448",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_issue",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L505",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L468",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_delete_issue",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L484",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_merge_pr",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_40",
+      "target": "adapters_github_adapter_throttled_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_throttled_request",
+      "target": "response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
       "source_location": "L35",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8066,6 +8726,16 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_rationale_36",
       "target": "adapters_github_adapter_list_user_repos"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_62",
+      "target": "adapters_github_adapter_list_user_repos",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -8121,6 +8791,39 @@
       "confidence_score": 1.0,
       "source": "services_commands_resolve_and_set_repo",
       "target": "adapters_github_adapter_list_user_repos"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_issue",
+      "target": "server_adapters_github_adapter_py_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L499",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "server_adapters_github_adapter_py_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_delete_issue",
+      "target": "server_adapters_github_adapter_py_int",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -8198,6 +8901,17 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_get_repo_tree_summary",
       "target": "server_adapters_github_adapter_py_int"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_merge_pr",
+      "target": "server_adapters_github_adapter_py_int",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -8288,6 +9002,17 @@
       "target": "adapters_github_adapter_repo_exists"
     },
     {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L499",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "server_adapters_github_adapter_py_bool",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8308,6 +9033,17 @@
       "confidence_score": 1.0,
       "source": "server_agents_status_agent_py",
       "target": "adapters_github_adapter_get_open_prs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L504",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "adapters_github_adapter_get_pr",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -8397,6 +9133,16 @@
       "target": "adapters_github_adapter_extract_images"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_159",
+      "target": "adapters_github_adapter_extract_images",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8418,6 +9164,16 @@
       "target": "adapters_github_adapter_strip_images"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_172",
+      "target": "adapters_github_adapter_strip_images",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -8437,6 +9193,16 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_rationale_133",
       "target": "adapters_github_adapter_fetch_image_bytes"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_181",
+      "target": "adapters_github_adapter_fetch_image_bytes",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -8490,6 +9256,16 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_rationale_149",
       "target": "adapters_github_adapter_resolve_image_url"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_197",
+      "target": "adapters_github_adapter_resolve_image_url",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -8618,6 +9394,16 @@
       "target": "adapters_github_adapter_search_files_in_repo"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_261",
+      "target": "adapters_github_adapter_search_files_in_repo",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8743,6 +9529,16 @@
       "target": "adapters_github_adapter_get_file_or_dir"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L290",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_290",
+      "target": "adapters_github_adapter_get_file_or_dir",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8803,6 +9599,16 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_rationale_289",
       "target": "adapters_github_adapter_search_code_in_repo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L337",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_337",
+      "target": "adapters_github_adapter_search_code_in_repo",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -8887,6 +9693,16 @@
       "confidence_score": 1.0,
       "source": "adapters_github_adapter_rationale_308",
       "target": "adapters_github_adapter_get_file_content"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L356",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_356",
+      "target": "adapters_github_adapter_get_file_content",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -8981,6 +9797,16 @@
       "target": "adapters_github_adapter_get_repo_tree_summary"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_371",
+      "target": "adapters_github_adapter_get_repo_tree_summary",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -9071,6 +9897,167 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L453",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_issue",
+      "target": "runtimeerror"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L447",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_447",
+      "target": "adapters_github_adapter_close_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/routes/actions.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "routes_actions_issue_close",
+      "target": "adapters_github_adapter_close_issue"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "adapters_github_adapter_close_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L465",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_delete_issue",
+      "target": "runtimeerror"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L459",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_459",
+      "target": "adapters_github_adapter_delete_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/routes/actions.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "routes_actions_issue_delete",
+      "target": "adapters_github_adapter_delete_issue"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "adapters_github_adapter_delete_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L482",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_482",
+      "target": "adapters_github_adapter_merge_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/routes/actions.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "routes_actions_pr_merge",
+      "target": "adapters_github_adapter_merge_pr"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "adapters_github_adapter_merge_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L510",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_close_pr",
+      "target": "runtimeerror"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L501",
+      "weight": 1.0,
+      "source": "adapters_github_adapter_rationale_501",
+      "target": "adapters_github_adapter_close_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/routes/actions.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "routes_actions_pr_close",
+      "target": "adapters_github_adapter_close_pr"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "adapters_github_adapter_close_pr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/agents/status_agent.py",
       "source_location": "L59",
@@ -9089,16 +10076,6 @@
       "confidence_score": 1.0,
       "source": "server_agents_status_agent_py",
       "target": "adapters_github_adapter_get_commit"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "server/adapters/github_adapter.py",
-      "source_location": "L133",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "adapters_github_adapter_rationale_133",
-      "target": "adapters_github_adapter_fetch_image_b64"
     },
     {
       "relation": "contains",
@@ -9162,6 +10139,16 @@
       "confidence_score": 1.0,
       "source": "adapters_whatsapp_adapter_rationale_34",
       "target": "adapters_whatsapp_adapter_parse_incoming"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/adapters/whatsapp_adapter.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "adapters_whatsapp_adapter_rationale_37",
+      "target": "adapters_whatsapp_adapter_parse_incoming",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9403,6 +10390,16 @@
       "target": "agents_intent_parser_parse_intent"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/agents/intent_parser.py",
+      "source_location": "L260",
+      "weight": 1.0,
+      "source": "agents_intent_parser_rationale_260",
+      "target": "agents_intent_parser_parse_intent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -9624,6 +10621,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "server/agents/status_agent.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "agents_status_agent_rationale_12",
+      "target": "agents_status_agent_handle_status_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/agents/status_agent.py",
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9803,6 +10810,26 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "routes_actions_issueaction",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "routes_actions_praction",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
       "source_file": "server/routes/chat.py",
       "source_location": "L13",
       "weight": 1.0,
@@ -9921,6 +10948,174 @@
       "confidence_score": 0.5,
       "source": "server_routes_ai_fix_py_errorreport",
       "target": "models_schemas_fixresponse"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "routes_actions_rationale_1",
+      "target": "server_routes_actions_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_issue_close",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_issue_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_issueaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_no_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_pr_close",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_pr_merge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "server_routes_actions_py",
+      "target": "routes_actions_praction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "routes_actions_issue_close",
+      "target": "routes_actions_issueaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "routes_actions_issue_delete",
+      "target": "routes_actions_issueaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "routes_actions_pr_close",
+      "target": "routes_actions_praction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "routes_actions_pr_merge",
+      "target": "routes_actions_praction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "routes_actions_issue_close",
+      "target": "routes_actions_no_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "routes_actions_issue_delete",
+      "target": "routes_actions_no_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "routes_actions_pr_close",
+      "target": "routes_actions_no_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/routes/actions.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "routes_actions_pr_merge",
+      "target": "routes_actions_no_token",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10467,9 +11662,9 @@
       "source_file": "server/routes/message.py",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_routes_message_py",
-      "target": "routes_message_handle_stream",
-      "confidence_score": 1.0
+      "target": "routes_message_handle_stream"
     },
     {
       "relation": "contains",
@@ -10553,9 +11748,9 @@
       "source_file": "server/routes/message.py",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_message_handle_stream",
-      "target": "routes_message_messagerequest",
-      "confidence_score": 1.0
+      "target": "routes_message_messagerequest"
     },
     {
       "relation": "calls",
@@ -10586,9 +11781,9 @@
       "source_file": "server/routes/message.py",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_message_handle_stream",
-      "target": "routes_message_build_ctx",
-      "confidence_score": 1.0
+      "target": "routes_message_build_ctx"
     },
     {
       "relation": "calls",
@@ -10640,9 +11835,9 @@
       "source_file": "server/routes/message.py",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_message_rationale_80",
-      "target": "routes_message_handle_stream",
-      "confidence_score": 1.0
+      "target": "routes_message_handle_stream"
     },
     {
       "relation": "rationale_for",
@@ -11238,6 +12433,16 @@
       "target": "services_assistant_last_id_of_kind"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_44",
+      "target": "services_assistant_last_id_of_kind",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11334,6 +12539,16 @@
       "target": "services_assistant_ordinal_in"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_66",
+      "target": "services_assistant_ordinal_in",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11363,6 +12578,16 @@
       "confidence_score": 1.0,
       "source": "services_assistant_rationale_74",
       "target": "services_assistant_desired_kind"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_77",
+      "target": "services_assistant_desired_kind",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11407,6 +12632,16 @@
       "target": "services_assistant_find_list"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_89",
+      "target": "services_assistant_find_list",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11436,6 +12671,16 @@
       "confidence_score": 1.0,
       "source": "services_assistant_rationale_116",
       "target": "services_assistant_resolve_ordinal"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_119",
+      "target": "services_assistant_resolve_ordinal",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -11558,7 +12803,17 @@
       "source_file": "server/services/assistant.py",
       "source_location": "L158",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_assistant_rationale_158",
+      "target": "services_assistant_run_assistant"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L161",
+      "weight": 1.0,
+      "source": "services_assistant_rationale_161",
       "target": "services_assistant_run_assistant",
       "confidence_score": 1.0
     },
@@ -11656,16 +12911,6 @@
       "confidence_score": 1.0,
       "source": "services_assistant_run_assistant",
       "target": "services_graph_service_relevant_files"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "server/services/assistant.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_assistant_rationale_41",
-      "target": "services_assistant_last_issue_number"
     },
     {
       "relation": "contains",
@@ -11933,6 +13178,16 @@
       "confidence_score": 1.0,
       "source": "services_commands_rationale_39",
       "target": "services_commands_resolve_and_set_repo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/commands.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "services_commands_rationale_41",
+      "target": "services_commands_resolve_and_set_repo",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -12242,6 +13497,16 @@
       "target": "services_context_store_best"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/context_store.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "services_context_store_rationale_72",
+      "target": "services_context_store_best",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -12404,6 +13669,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "server/services/create_pr.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "services_create_pr_rationale_11",
+      "target": "services_create_pr_nochangeserror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/create_pr.py",
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12495,6 +13770,16 @@
       "confidence_score": 1.0,
       "source": "services_create_pr_rationale_24",
       "target": "services_create_pr_open_pr"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/create_pr.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "services_create_pr_rationale_26",
+      "target": "services_create_pr_open_pr",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -12728,6 +14013,16 @@
       "target": "services_fix_issue_safe_join"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "services_fix_issue_rationale_62",
+      "target": "services_fix_issue_safe_join",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -12935,6 +14230,16 @@
       "target": "services_fix_issue_parse_changes"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "services_fix_issue_rationale_114",
+      "target": "services_fix_issue_parse_changes",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -12954,6 +14259,16 @@
       "confidence_score": 1.0,
       "source": "services_fix_issue_rationale_133",
       "target": "services_fix_issue_emit"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/fix_issue.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "services_fix_issue_rationale_135",
+      "target": "services_fix_issue_emit",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13408,6 +14723,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "server/services/graph_service.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "services_graph_service_rationale_35",
+      "target": "services_graph_service_build_from_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/graph_service.py",
       "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13428,6 +14753,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "server/services/graph_service.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "services_graph_service_rationale_98",
+      "target": "services_graph_service_build_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/graph_service.py",
       "source_location": "L119",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13443,6 +14778,16 @@
       "confidence_score": 1.0,
       "source": "services_graph_service_rationale_124",
       "target": "services_graph_service_relevant_files"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "services_graph_service_rationale_126",
+      "target": "services_graph_service_relevant_files",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -13505,6 +14850,16 @@
       "confidence_score": 1.0,
       "source": "services_graph_service_rationale_175",
       "target": "services_graph_service_query_graph"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/graph_service.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "services_graph_service_rationale_177",
+      "target": "services_graph_service_query_graph",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13758,6 +15113,16 @@
       "target": "utils_shell_redact"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/utils/shell.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "utils_shell_rationale_13",
+      "target": "utils_shell_redact",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
@@ -13815,11 +15180,31 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "server/utils/shell.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "utils_shell_rationale_18",
+      "target": "utils_shell_run_cmd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/utils/shell.py",
       "source_location": "L39",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "utils_shell_rationale_39",
       "target": "utils_shell_run_shell"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/utils/shell.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "utils_shell_rationale_42",
+      "target": "utils_shell_run_shell",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -13831,6 +15216,16 @@
       "confidence_score": 1.0,
       "source": "utils_shell_run_shell",
       "target": "server_utils_shell_py_bool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "slack-bridge/index.js",
+      "source_location": "L366",
+      "weight": 1.0,
+      "source": "slack_bridge_index_js",
+      "target": "slack_bridge_index_actionsfromdata",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14158,9 +15553,9 @@
       "source_file": "slack-bridge/index.js",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slack_bridge_index_js",
-      "target": "slack_bridge_index_renderfinal",
-      "confidence_score": 1.0
+      "target": "slack_bridge_index_renderfinal"
     },
     {
       "relation": "contains",
@@ -14171,6 +15566,16 @@
       "confidence_score": 1.0,
       "source": "slack_bridge_index_js",
       "target": "slack_bridge_index_resolverepo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "slack-bridge/index.js",
+      "source_location": "L286",
+      "weight": 1.0,
+      "source": "slack_bridge_index_js",
+      "target": "slack_bridge_index_runaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14208,9 +15613,9 @@
       "source_file": "slack-bridge/index.js",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slack_bridge_index_js",
-      "target": "slack_bridge_index_streamprogress",
-      "confidence_score": 1.0
+      "target": "slack_bridge_index_streamprogress"
     },
     {
       "relation": "contains",
@@ -14292,6 +15697,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "slack-bridge/index.js",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "slack_bridge_index_handlequery",
+      "target": "slack_bridge_index_actionsfromdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "slack-bridge/index.js",
       "source_location": "L143",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14349,9 +15765,9 @@
       "source_file": "slack-bridge/index.js",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slack_bridge_index_handlequery",
-      "target": "slack_bridge_index_renderfinal",
-      "confidence_score": 1.0
+      "target": "slack_bridge_index_renderfinal"
     },
     {
       "relation": "calls",
@@ -14382,9 +15798,9 @@
       "source_file": "slack-bridge/index.js",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slack_bridge_index_handlequery",
-      "target": "slack_bridge_index_streamprogress",
-      "confidence_score": 1.0
+      "target": "slack_bridge_index_streamprogress"
     },
     {
       "relation": "calls",
@@ -14404,9 +15820,9 @@
       "source_file": "slack-bridge/index.js",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slack_bridge_index_runfix",
-      "target": "slack_bridge_index_streamprogress",
-      "confidence_score": 1.0
+      "target": "slack_bridge_index_streamprogress"
     },
     {
       "relation": "calls",
@@ -19058,6 +20474,26 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
+      "source_file": "server/adapters/github_adapter.py",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "adapters_github_adapter_rationale_133",
+      "target": "adapters_github_adapter_fetch_image_b64"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "server/services/assistant.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_assistant_rationale_41",
+      "target": "services_assistant_last_issue_number"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
       "source_file": "server/services/assistant.py",
       "source_location": "L65",
       "weight": 1.0,
@@ -19466,5 +20902,5 @@
       "source_file": "Project-details.md"
     }
   ],
-  "built_at_commit": "39dc2b85ecd203a382e87bd14986cb3cbaf88c23"
+  "built_at_commit": "84aa1d0e6f074dc6344f9c69d9e03ecfd06b44a5"
 }

@@ -1,22 +1,23 @@
-# Graph Report - Auto Error Fixer  (2026-06-23)
+# Graph Report - Auto Error Fixer  (2026-06-26)
 
 ## Corpus Check
-- 51 files · ~36,241 words
+- 52 files · ~37,881 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 816 nodes · 1164 edges · 95 communities (75 shown, 20 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.77)
+- 868 nodes · 1257 edges · 111 communities (91 shown, 20 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `39dc2b85`
+- Built from commit: `84aa1d0e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
@@ -103,18 +104,33 @@
 - [[_COMMUNITY_Community 93|Community 93]]
 - [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
+- [[_COMMUNITY_Community 96|Community 96]]
+- [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 98|Community 98]]
+- [[_COMMUNITY_Community 99|Community 99]]
+- [[_COMMUNITY_Community 100|Community 100]]
+- [[_COMMUNITY_Community 101|Community 101]]
+- [[_COMMUNITY_Community 102|Community 102]]
+- [[_COMMUNITY_Community 103|Community 103]]
+- [[_COMMUNITY_Community 104|Community 104]]
+- [[_COMMUNITY_Community 105|Community 105]]
+- [[_COMMUNITY_Community 106|Community 106]]
+- [[_COMMUNITY_Community 107|Community 107]]
+- [[_COMMUNITY_Community 108|Community 108]]
+- [[_COMMUNITY_Community 109|Community 109]]
+- [[_COMMUNITY_Community 110|Community 110]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `run_assistant()` - 35 edges
-2. `parse_intent()` - 22 edges
-3. `str` - 20 edges
-4. `handle_status_query()` - 20 edges
+1. `run_assistant()` - 36 edges
+2. `str` - 25 edges
+3. `parse_intent()` - 23 edges
+4. `handle_status_query()` - 21 edges
 5. `WhatsApp Bridge - Complete Flow Documentation` - 20 edges
 6. `fix_issue()` - 19 edges
-7. `AI Autonomous Engineering Agent — Architecture & Implementation` - 18 edges
-8. `get_repo_tree_summary()` - 17 edges
-9. `_throttled_get()` - 16 edges
-10. `search_files_in_repo()` - 16 edges
+7. `_throttled_get()` - 18 edges
+8. `get_repo_tree_summary()` - 18 edges
+9. `AI Autonomous Engineering Agent — Architecture & Implementation` - 18 edges
+10. `search_files_in_repo()` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `whatsapp-bridge Application` --implements--> `WhatsApp Integration Flow`  [INFERRED]
@@ -132,15 +148,19 @@
 - **Multi-Agent Processing Pipeline** — ai_agent_md_planner_agent, ai_agent_md_coder_agent, ai_agent_md_reviewer_agent, ai_agent_md_fixer_agent [EXTRACTED 1.00]
 - **Frontend Error-to-PR Fix Pipeline** — project_details_md_error_tracking, project_details_md_analyze_error, project_details_md_generate_fix, project_details_md_apply_patch, project_details_md_validate_fix, project_details_md_create_pr [EXTRACTED 1.00]
 
-## Communities (95 total, 20 thin omitted)
+## Communities (111 total, 20 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
 Nodes (45): { addHistory, getHistory }, ALLOWED_NUMBER, axios, client, { Client, LocalAuth }, formatCommitDetail(), formatCommitList(), formatDirectory() (+37 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.06
-Nodes (53): ErrorReport, FixResponse, handle_error(), FixIssueRequest, handle_fix_issue(), Issue → PR endpoint. Triggered by the Slack "Fix this issue" button / command., stream_fix_issue(), RuntimeError (+45 more)
+Cohesion: 0.18
+Nodes (19): int, str, _emit(), fix_issue(), _image_blocks(), _parse_changes(), _pick_files(), Autonomous issue → PR agent.  Given a GitHub issue, this:   1. reads the issu (+11 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.18
+Nodes (20): close_issue(), close_pr(), delete_issue(), merge_pr(), Rate-limited write request (PATCH/PUT/DELETE/POST). Returns the raw     respons, Mark an issue as fixed → close it with state_reason=completed., Permanently delete an issue. The REST API has no delete-issue endpoint —     th, Merge a PR into its base branch. Returns {merged, message}. A 405/409     means (+12 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.26
@@ -151,12 +171,12 @@ Cohesion: 0.17
 Nodes (11): dependencies, axios, dotenv, qrcode-terminal, whatsapp-web.js, description, main, name (+3 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.07
-Nodes (46): { addHistory, getHistory }, { addHistory, getHistory, getRepo, setRepo }, ALLOWED_USER, { App }, axios, files, _FIX_PHASES, fixButtonFromData() (+38 more)
+Cohesion: 0.06
+Nodes (47): actionsFromData(), { addHistory, getHistory }, { addHistory, getHistory, getRepo, setRepo }, ALLOWED_USER, { App }, axios, files, _FIX_PHASES (+39 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.06
-Nodes (65): _extract_images(), fetch_image_b64(), fetch_image_bytes(), get_commit(), get_file_content(), get_file_or_dir(), get_issue_detail(), get_open_issues() (+57 more)
+Cohesion: 0.22
+Nodes (21): _extract_images(), fetch_image_b64(), get_commit(), get_issue_detail(), get_open_issues(), get_open_prs(), get_pr(), get_recent_commits() (+13 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.25
@@ -355,8 +375,8 @@ Cohesion: 0.18
 Nodes (10): dependencies, axios, dotenv, @slack/bolt, description, main, name, scripts (+2 more)
 
 ### Community 75 - "Community 75"
-Cohesion: 0.09
-Nodes (39): parse_incoming(), Return list of {from, text, message_id} for each text message in a webhook paylo, send_text(), Connection, _build_ctx(), handle(), handle_stream(), MessageRequest (+31 more)
+Cohesion: 0.08
+Nodes (42): parse_incoming(), Return list of {from, text, message_id} for each text message in a webhook paylo, Return list of {from, text, message_id} for each text message in a webhook paylo, send_text(), Connection, _build_ctx(), handle(), handle_stream() (+34 more)
 
 ### Community 76 - "Community 76"
 Cohesion: 0.67
@@ -399,15 +419,75 @@ Cohesion: 0.67
 Nodes (3): code:ts (import simpleGit from "simple-git";), services/cloneRepo.ts, Step 4 — Clone Repository
 
 ### Community 86 - "Community 86"
-Cohesion: 0.05
-Nodes (57): calc_cost_inr(), generate_chat_reply(), parse_intent(), Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall (+49 more)
+Cohesion: 0.13
+Nodes (16): parse_intent(), Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall, Classify intent using OpenAI gpt-4o-mini.      `api_key` is the OpenAI key; fall (+8 more)
 
 ### Community 95 - "Community 95"
-Cohesion: 0.12
-Nodes (28): BackgroundTasks, Path, build_graph_bg(), build_graph_sync(), BuildRequest, graph_status(), query_graph_endpoint(), QueryRequest (+20 more)
+Cohesion: 0.10
+Nodes (32): BackgroundTasks, Path, build_graph_bg(), build_graph_sync(), BuildRequest, graph_status(), query_graph_endpoint(), QueryRequest (+24 more)
+
+### Community 96 - "Community 96"
+Cohesion: 0.15
+Nodes (15): _desired_kind(), _find_list(), _ids_from_history(), If the user says 'the Nth one' / 'the last one', override the entity id     dete, If the user says 'the Nth one' / 'the last one', override the entity id     dete, If the user says 'the Nth one' / 'the last one', override the entity id     det, Most recent list we posted → ('commits'|'prs'|'issues', [ids in order])., What the user explicitly asked for: 'prs' | 'commits' | 'issues' | None. (+7 more)
+
+### Community 97 - "Community 97"
+Cohesion: 0.15
+Nodes (14): get_file_or_dir(), Search the ENTIRE repo tree recursively for files/folders matching a term., Search the ENTIRE repo tree recursively for files/folders matching a term., Returns directory listing or file content from the repo tree., Search the ENTIRE repo tree recursively for files/folders matching a term., Returns directory listing or file content from the repo tree., Returns directory listing or file content from the repo tree., Search the ENTIRE repo tree recursively for files/folders matching a term. (+6 more)
+
+### Community 98 - "Community 98"
+Cohesion: 0.16
+Nodes (14): bool, str, Returns {reply, intent, data, cost_inr, graph_used}., Returns {reply, intent, data, cost_inr, graph_used}., Returns {reply, intent, data, cost_inr, graph_used}., Returns {reply, intent, data, cost_inr, graph_used}., Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb)     r, Returns {reply, intent, data, cost_inr, graph_used}. `progress` (async cb) (+6 more)
+
+### Community 99 - "Community 99"
+Cohesion: 0.27
+Nodes (9): BaseModel, ErrorReport, FixResponse, handle_error(), ErrorReport, ErrorReport, str, process_error() (+1 more)
+
+### Community 100 - "Community 100"
+Cohesion: 0.22
+Nodes (11): str, str, clone_repo(), _force_rmtree(), Windows-safe recursive delete — clears read-only flags set by git., Replace token in HTTPS URLs so it never appears in logs., Replace token in HTTPS URLs so it never appears in logs., Run a command in a thread pool (Windows-safe, works on SelectorEventLoop). (+3 more)
+
+### Community 101 - "Community 101"
+Cohesion: 0.21
+Nodes (11): str, str, create_pull_request(), NoChangesError, open_pr(), Raised when there's nothing to commit (proposed changes were a no-op)., Reusable: branch → stage → commit → push → open a draft PR for whatever     chan, Reusable: branch → stage → commit → push → open a draft PR. Returns     (pr_url, (+3 more)
+
+### Community 102 - "Community 102"
+Cohesion: 0.18
+Nodes (11): get_file_content(), Search file CONTENTS (GitHub code search) — finds files mentioning the terms,, Full(ish) source of a single file — for deep code analysis (not truncated to 2k), Search file CONTENTS (GitHub code search) — finds files mentioning the terms,, Search file CONTENTS (GitHub code search) — finds files mentioning the terms,, Search file CONTENTS (GitHub code search) — finds files mentioning the terms,, Full(ish) source of a single file — for deep code analysis (not truncated to 2k), Full(ish) source of a single file — for deep code analysis (not truncated to 2k) (+3 more)
+
+### Community 103 - "Community 103"
+Cohesion: 0.22
+Nodes (10): list_user_repos(), All repos the token can access, most-recently-updated first (paginated).      No, All repos the token can access, most-recently-updated first (paginated)., repo_exists(), check_repo(), list_repos(), Repo discovery + selection.  The GitHub token stays server-side (.env). Bridges, bool (+2 more)
+
+### Community 104 - "Community 104"
+Cohesion: 0.31
+Nodes (8): calc_cost_inr(), generate_chat_reply(), float, chat(), ChatRequest, ChatResponse, bool, str
+
+### Community 105 - "Community 105"
+Cohesion: 0.24
+Nodes (9): _last_id_of_kind(), _last_issue_number(), _ordinal_in(), Core assistant orchestration: intent → graph context → routed reply.  Shared b, Most recent id for a specific kind ('issues'|'prs'), from a list (its     *#N* m, Most recent id for a specific kind ('issues'|'prs'), from a list (its     *#N*, Return 1-based position, -1 for 'last', or None., Return 1-based position, -1 for 'last', or None. (+1 more)
+
+### Community 106 - "Community 106"
+Cohesion: 0.25
+Nodes (8): get_repo_tree_summary(), Single API call → compact 2-level repo structure string for Claude context., Single API call → compact 2-level repo structure string for Claude context., Search the ENTIRE repo tree recursively for files/folders matching a term., Single API call → compact 2-level repo structure string for Claude context., Single API call → compact 2-level repo structure string for Claude context., Single API call → compact 2-level repo structure string for Claude context., Single API call → compact 2-level repo structure string for Claude context.
+
+### Community 107 - "Community 107"
+Cohesion: 0.29
+Nodes (7): bool, str, bool, validate_fix(), Run a shell command. Returns True on success, False on failure (non-blocking)., Run a shell command. Returns True on success, False on failure (non-blocking)., run_shell()
+
+### Community 108 - "Community 108"
+Cohesion: 0.29
+Nodes (7): fetch_image_bytes(), Download image bytes (+ mime) — for passing screenshots to Claude vision., Turn an auth-gated GitHub image URL into a publicly-fetchable one.      `github., Download image bytes (+ mime) — for passing screenshots to Claude vision., Turn an auth-gated GitHub image URL into a publicly-fetchable one.      `githu, resolve_image_url(), bytes
+
+### Community 109 - "Community 109"
+Cohesion: 0.60
+Nodes (4): FixIssueRequest, handle_fix_issue(), Issue → PR endpoint. Triggered by the Slack "Fix this issue" button / command., stream_fix_issue()
+
+### Community 110 - "Community 110"
+Cohesion: 0.67
+Nodes (3): Status query endpoint.  Executes an already-classified `status_query` intent aga, status(), StatusRequest
 
 ## Knowledge Gaps
-- **269 isolated node(s):** `PreToolUse`, `allow`, `Request`, `bool`, `bytes` (+264 more)
+- **269 isolated node(s):** `PreToolUse`, `allow`, `Request`, `Response`, `bytes` (+264 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -415,16 +495,16 @@ Nodes (28): BackgroundTasks, Path, build_graph_bg(), build_graph_sync(), BuildRe
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Path` connect `Community 95` to `Community 0`, `Community 5`?**
-  _High betweenness centrality (0.092) - this node is a cross-community bridge._
+  _High betweenness centrality (0.096) - this node is a cross-community bridge._
 - **Why does `build_graph()` connect `Community 95` to `Community 1`?**
-  _High betweenness centrality (0.071) - this node is a cross-community bridge._
-- **Why does `run_assistant()` connect `Community 86` to `Community 75`, `Community 6`, `Community 95`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+- **Why does `run_assistant()` connect `Community 98` to `Community 96`, `Community 97`, `Community 102`, `Community 6`, `Community 104`, `Community 105`, `Community 106`, `Community 75`, `Community 86`, `Community 95`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
 - **What connects `PreToolUse`, `allow`, `Request` to the rest of the system?**
-  _378 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _411 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.06914893617021277 - nodes in this community are weakly interconnected._
-- **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.060515873015873016 - nodes in this community are weakly interconnected._
 - **Should `Community 5` be split into smaller, more focused modules?**
-  _Cohesion score 0.06636500754147813 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06359189378057302 - nodes in this community are weakly interconnected._
+- **Should `Community 31` be split into smaller, more focused modules?**
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
