@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const { addHistory, getHistory } = require('./store');
 
-const API_URL = process.env.API_URL || ' http://127.0.0.1:8023';
+// const API_URL = process.env.API_URL || 'http://13.234.141.70:8023';
 // Optional: restrict the bot to a single Slack user id (e.g. U0123ABCD)
 const ALLOWED_USER = (process.env.ALLOWED_USER || '').trim();
 
@@ -12,6 +12,7 @@ const ALLOWED_USER = (process.env.ALLOWED_USER || '').trim();
 const BOT_TOKEN       = process.env.slack_oauth_token   || process.env.SLACK_BOT_TOKEN;
 const APP_TOKEN       = process.env.slack_api_bot_key   || process.env.SLACK_APP_TOKEN;
 const SIGNING_SECRET  = process.env.slack_signing_secret || process.env.SLACK_SIGNING_SECRET;
+const API_URL         = process.env.API_URL || 'http://localhost:8023';
 
 if (!BOT_TOKEN || !APP_TOKEN) {
   console.error('❌  Missing Slack tokens. Need slack_oauth_token (xoxb-) and slack_api_bot_key (xapp-) in .env');
